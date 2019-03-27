@@ -1,0 +1,46 @@
+<!--component/applyItem/applyItem.wxml-->
+<navigator hover-class="none" class='apply-item' url="/pages/applyresult/applyresult?id={{applyItem.id}}&type=1&status={{applyItem.auditStatus}}">
+  <block wx:if="{{applyIndex%2 == 0}}">
+  <view class='apply-item-left'>
+    <!-- <image src='../../images/pro1.jpg' bindload="imageLoad" bindload="imageLoad" data-index="1" style="width:{{ images[1].width }}rpx; height:{{ images[1].height }}rpx;" mode="aspectFit" class='apply-item-left-img'></image> -->
+    <image src='{{applyItem.goods[0].image}}' class='apply-item-left-img' mode='widthFix'></image>
+  </view>
+  <view class='apply-item-right '>
+    <view class='apply-item-right1'>
+    <text class='apply-item-top {{applyItem.goods[0].name == "臻采透亮凝水啫喱凝霜：爆水小方" || balanceType.product.name == "臻采透亮洁面啫喱" ? "" : "fontHyb"}}'>{{applyItem.name4}}</text>
+    <text class='apply-item-top {{applyItem.goods[0].name == "臻采透亮凝水啫喱凝霜：爆水小方" || balanceType.product.name == "臻采透亮洁面啫喱" ? "" : "fontHyb"}}' style='margin-bottom:5rpx;'>{{applyItem.name3}}</text>
+    <!-- <text class='apply-item-top' style='margin-bottom:5rpx;'>{{applyItem.goods[0].name1}}</text> -->
+    <text class='apply-item-txt'>开奖时间：{{applyItem.opentime}}</text>
+    <view class='app-img-view'>
+        <image src='{{applyItem.goods[0].img}}' mode="widthFix" class='apply-item-img'></image>
+      </view>
+    <!-- <view class='apply-btn'>
+      <text class='apply-btn-txt'>{{applyItem.auditStatus == 'wait' ? '未开奖' : applyItem.auditStatus == 'fail' ? '已开奖' : applyItem.auditStatus == 'pass' ? '已中奖' : applyItem.auditStatus == 'accepted' ? '已领奖' : '正装申领'}}</text>
+    </view> -->
+    <button class='apply-btn apply-btn-txt'>{{applyItem.auditStatus == 'wait' ? '申领中' : applyItem.auditStatus == 'fail' ? '已开奖' : applyItem.auditStatus == 'pass' ? '去领奖' : applyItem.auditStatus == 'accepted' ? '已领奖' : '正装申领'}}</button>
+    </view>
+  </view>
+  </block>
+  <block wx:else>
+    <view class='apply-item-right apply-item-right2'>
+      <view class='apply-item-right1'>
+      <!-- <text class='apply-item-top'>{{applyItem.goods[0].name2}}</text>
+      <text class='apply-item-top' style='margin-bottom:5rpx;'>{{applyItem.goods[0].name1}}</text> -->
+      <text class='apply-item-top {{applyItem.goods[0].name == "臻采透亮凝水啫喱凝霜：爆水小方" || balanceType.product.name == "臻采透亮洁面啫喱" ? "" : "fontHyb"}}'>{{applyItem.name4}}</text>
+    <text class='apply-item-top {{applyItem.goods[0].name == "臻采透亮凝水啫喱凝霜：爆水小方" || balanceType.product.name == "臻采透亮洁面啫喱" ? "" : "fontHyb"}}' style='margin-bottom:5rpx;'>{{applyItem.name3}}</text>
+      <text class='apply-item-txt'>开奖时间：2018.09.09</text>
+      <view class='app-img-view'>
+        <image src='{{applyItem.goods[0].img}}' mode="widthFix" class='apply-item-img'></image>
+      </view>
+      <button class='apply-btn apply-btn-txt'>{{applyItem.auditStatus == 'wait' ? '申领中' : applyItem.auditStatus == 'fail' ? '已开奖' : applyItem.auditStatus == 'pass' ? '去领奖' : applyItem.auditStatus == 'accepted' ? '已领奖' : '正装申领'}}</button>
+      <!-- <view class='apply-btn'>
+        <text class='apply-btn-txt'>{{applyItem.auditStatus == 'wait' ? '申领中' : applyItem.auditStatus == 'fail' ? '已开奖' : applyItem.auditStatus == 'pass' ? '去领奖' : applyItem.auditStatus == 'accepted' ? '已领奖' : '正装申领'}}</text> 
+      </view>-->
+      </view>
+    </view>
+    <view class='apply-item-left'>
+      <!-- <image src='../../images/pro1.jpg' bindload="imageLoad" bindload="imageLoad" data-index="1" style="width:{{ images[1].width }}rpx; height:{{ images[1].height }}rpx;" mode="aspectFit" class='apply-item-left-img'></image> -->
+      <image src='{{applyItem.goods[0].image}}' mode="aspectFit" class='apply-item-left-img'></image>
+    </view>
+  </block>
+</navigator>

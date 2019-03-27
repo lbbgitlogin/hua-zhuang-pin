@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "apply-item": "/component/applyItem/applyItem",
+    "order-item": "/component/orderItem/orderItem"
+  }
+}

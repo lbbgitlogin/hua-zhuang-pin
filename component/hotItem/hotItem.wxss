@@ -1,0 +1,50 @@
+/* component/hotItem/hotItem.wxss */
+@import '../../utils/common.wxss';
+.hot-img{
+  width: 100%;
+  height: auto;
+}
+.hot-item{
+  margin-bottom: 40rpx;
+}
+.hot-item-content{
+  background: #fff;
+  box-shadow: 0 0 20rpx rgba(0,0,0,0.2);
+}
+.hot-type0{
+  padding-right: 33rpx;
+}
+.hot-type1{
+  padding-left: 33rpx;
+}
+.hot-tit{
+  color: #5e5e5e;
+  font-size: 22.22rpx;
+  line-height: 34rpx;
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
+  font-family: 'HYb1gj';
+  /* height: 68rpx */
+}
+.fontHyb{
+  font-family: 'HYb1gj';
+}
+.hot-txt{
+  color: #5e5e5e;
+  font-size: 26rpx;
+}
+.hot-info{
+  position: relative
+}
+.hot-info-left{
+  padding: 14rpx 13rpx;
+  /* padding-right: 80rpx; */
+  display: flex;
+  flex-direction: column;
+}
+.hot-info-right{
+  position: absolute;
+  bottom: 10rpx;
+  right: 10rpx;
+}

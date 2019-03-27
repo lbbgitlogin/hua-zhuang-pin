@@ -1,0 +1,42 @@
+<!--component/proItem/proItem.wxml-->
+<view class='pro-item'>
+  <!-- <view class='content-all'> -->
+  <navigator hover-class="none" class='content-all' url='/pages/details/details?id={{itemObj.id}}&key={{itemObj.key}}'>
+  <image class='pro-img' mode="widthFix" src='{{itemObj.img}}'></image>
+  <view class='info'>
+    <text class='tit {{itemObj.product.name == "臻采透亮凝水啫喱凝霜：爆水小方" || itemObj.product.name == "臻采透亮洁面啫喱" ? "" : "fontHyb"}}'>{{itemObj.product.name}}</text>
+    <view class='top'>
+      <view class='top-list'>
+        <text class='txt'>{{itemObj.stockType ? '规格：'+itemObj.stockType : ''}}</text>
+      </view>
+      <view class='top-list top-list2'>
+        <text class='txt2'>¥{{itemObj.price}}</text>
+      </view>
+    </view>
+  </view>
+  </navigator>
+  <!-- <block wx:if="{{isLogin}}">
+  <view class='btn-content'>
+    <button class='list right list-txt' style='color:#fff;border-radius:8rpx;' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权 </button>
+  </view>
+  </block>
+  <block wx:else> -->
+  <view class='btn-content'>
+    <view class='list left' bindtap='toApply' wx:if="{{itemObj.tryout}}" >
+      <block wx:if="{{itemObj.istime == '1'}}">
+        <text class='list-txt left-txt'>{{itemObj.auditStatus == 'wait' ? '申领中' : itemObj.auditStatus == 'fail' ? '已开奖' : itemObj.auditStatus == 'pass' ? '去领奖' : itemObj.auditStatus == 'accepted' ? '已领奖' : '正装申领'}}</text>
+      </block>
+      <block wx:if="{{itemObj.istime == '0'}}">
+        <text class='list-txt left-txt'>申领未开始</text>
+      </block>
+      <block wx:if="{{itemObj.istime == '2'}}">
+        <text class='list-txt left-txt'>申领已结束</text>
+      </block>
+    </view>
+    <!-- <view class='list right' bindtap='createOrder' data-id="{{itemObj}}"> -->
+    <navigator class='list right {{itemObj.tryout ? "" : "right1"}}' url='/pages/details/details?id={{itemObj.id}}&key={{itemObj.key}}'>
+      <text class='list-txt right-txt'>立即购买</text>
+    </navigator>
+  </view>
+  <!-- </block> -->
+</view>

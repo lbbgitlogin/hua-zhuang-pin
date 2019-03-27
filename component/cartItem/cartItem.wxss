@@ -1,0 +1,147 @@
+/* component/cartItem/cartItem.wxss */
+@import '../../utils/common.wxss';
+.cart-list{
+  padding: 0 10rpx;
+}
+.cart-list1{
+  display: flex;
+  flex-direction: row;
+  padding: 35rpx 0;
+}
+.line{
+  border-bottom: 1rpx solid #c8c9cb;
+  /* width: 100%;
+  height: 1rpx;
+  background: #c8c9cb; */
+}
+.cart-list-left{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.cart-list-right{
+  flex: 2;
+  padding-left: 25rpx;
+  padding-top:27rpx;
+  padding-right: 6rpx;
+  display: flex;
+  flex-direction: column;
+}
+.cart-select{
+  padding-right: 10rpx;
+}
+.cart-pro{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 230rpx;
+  background: #eee;
+}
+.cart-pro-img{
+  width: 230rpx;
+  height: 230rpx;
+}
+.cart-list-top{
+  display: flex;
+  flex-direction: row;
+  padding-right: 60rpx;
+  position: relative;
+}
+.top-left{
+
+}
+.top-tit{
+  color: #000102;
+  font-size: 27.78rpx;
+  line-height: 34rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  margin-bottom: 6rpx;
+  font-family: 'HYb1gj';
+  /* font-family: Arial */
+
+}
+.fontHyb{
+  /* font-family: 'HYb1gj'; */
+  font-family: 'HYb1gj'
+}
+
+.picker{
+  color: #847f7f;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+}
+
+.cart-bottom{
+    flex: auto;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items:flex-end;
+  padding-bottom: 10rpx;
+}
+.top-txt{
+  color: #847f7f;
+  font-size: 23.37rpx;
+  line-height: 32rpx;
+  font-family: 'HYb1gj';
+}
+.cart-change{
+  /* flex: 1; */
+  
+}
+.cart-price{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.cart-change-view{
+  display: flex;
+  flex-direction: row;
+  border: 1rpx solid #847f7f;
+  border-radius: 10rpx;
+  /* height: 50rpx;
+  justify-content: center;
+  align-items: center; */
+}
+.cart-change-list{
+  width: 38rpx;
+  height: 38rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-minus-icon{
+  color: #847f7f;
+  font-size: 22.22rpx;
+  font-family: 'Avenir';
+}
+.cart-num-icon{
+  color: #000;
+  font-size: 22.22rpx;
+  font-family: 'Avenir';
+}
+.cart-num{
+  width: 60rpx;
+  border-right: 1rpx solid #847f7f;
+  border-left: 1rpx solid #847f7f;
+}
+.cart-price-txt{
+  color: #cf0202;
+  font-size: 33.37rpx;
+  line-height: 37rpx;
+  font-family: 'Avenir';
+  font-weight:500;
+}
+.top-right{
+  position:absolute;
+  top: 5rpx;
+  right: 0;
+}

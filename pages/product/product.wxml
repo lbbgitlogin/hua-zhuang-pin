@@ -1,0 +1,60 @@
+<!--pages/product/product.wxml-->
+<block wx:if="{{isAuto}}">
+  <view class='start-page1 {{isphone ? "" : "start-page2"}}'>
+    <!-- <image src='{{step2Img}}' style='width:100%;height:100%;' class='step2Img' mode='widthFix' bindload="loadend"></image> -->
+    <view class='login-info {{isphone ? "" : "login-info1"}}'>
+      <!-- <view class='login-view'>
+        <image class='k-logo' src='../../images/k-logo.png' mode='widthFix'></image>
+        <text class='info-txt'>小程序申请获得以下权限：</text>
+      </view>
+      <text class='info-txt'>获得您的公开信息（昵称、头像等）</text> -->
+      <button class='login-btn' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权 </button>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view class='container '>
+    <image id='bgmodule' mode="widthFix" src='https://statics.maiscrm.com/k-bright/images/bg2.jpg'></image>
+    <!-- 提示start -->
+    <view wx:if="{{ss}}" class='tips-box {{isTip?"active":""}}'>
+      <view class='tips'>
+        <view class='title'  bindtap='changeTip'>
+          <view>
+            <image src='../../images/logis.png' class='back-img'></image>
+            <text>春节快递停发通知</text>
+          </view>
+        </view>
+        <view class='inner'>
+          <image src='../../images/tips.png' class='tips-img' mode='widthFix'></image>
+        </view>
+        <view class='back-icon'  catchtap='changeTip'></view>
+      </view>
+    </view>
+    <!-- 提示end -->
+    <view style='padding: 0 20rpx; '>
+      <search-top bind:search="search" search-type="1"></search-top>
+      <!-- <view class='tip '>
+      <text class='tip-txt '>通知：因进博会安排，上海地区订单延迟到11.10号开始发货，给您造成不便还请谅解~</text>
+    </view> -->
+      <!-- <view class='search-top '>
+      <image class='search-icon1 search-right ' src='../../images/serch-icon.png ' bindtap='search '></image>
+      <view class='input-view '>
+      <input name="search" id="search" class='input-style ' bindinput="bindKeyInput" placeholder="搜索产品" value='{{searchTxt}} ' bindconfirm="search" placeholder-style="color:#cbcaca;font-size:22.22rpx;"/>
+      </view>
+    </view> -->
+    </view>
+    <view class='pro '>
+      <block wx:if="{{list.length > 0}}">
+        <pro-item wx:for="{{list}}" bind:myorder="create" wx:key="{{index}}" item-obj="{{item}}" is-login="{{!hasUserInfo && canIUse}}" bind:getinfo="getInfo"></pro-item>
+        <!-- <view id='no-more ' wx:if="{{!isMore}}">
+        <text class='empty-txt '>没有更多了～</text>
+      </view> -->
+      </block>
+      <block wx:else>
+        <view id='empty-list '>
+          <text class='empty-txt '>商品正在加载中...</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</block>

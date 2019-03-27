@@ -1,0 +1,366 @@
+/* pages/details/details.wxss */
+/* @import "../../utils/wxParse/wxParse.wxss"; */
+.swiper-c{
+  height:890rpx;
+  position:relative;
+}
+.swiper-c1{
+  height:950rpx;
+}
+.swiper-w{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pro-top-view{
+  position: relative;
+}
+.pro-img{
+  width: 100%;
+}
+.pro-details{
+  position: relative;
+  
+}
+.top{
+  position: absolute;
+  top: 100rpx;
+  left: 50rpx;
+  right: 50rpx;
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* padding: 0 50rpx; */
+}
+.tit{
+  color: #4e4e50;
+  font-size: 44.12rpx;
+  text-align: center;
+  /* font-family: Arial; */
+  font-family: 'HYg2gj';
+  line-height:50rpx;
+  margin-bottom: 17rpx;
+}
+.txt{
+  color: #efa9c5;
+  font-size: 44.12rpx;
+  font-family: 'HYb1gj';
+  line-height:50rpx;
+}
+.fontHyb{
+  font-family: 'HYg2gj';
+}
+.spec-content{
+  padding: 0rpx 30rpx 0rpx;
+  /* padding-bottom:0; */
+
+}
+.spec-content1{
+  padding-top: 90rpx;
+}
+.spec-txt{
+  color: #000000;
+  font-size: 22.22rpx;
+  line-height: 35rpx;
+  font-family: 'HYg2gj';
+}
+.spec-list{
+  display: flex;
+  flex-direction: row;
+  margin-top:45rpx;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.list{
+  width: 33.33%;
+  /* flex: 1; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /*  */
+  margin-bottom: 23rpx;
+  
+}
+.list-content{
+  padding: 0 20rpx;
+}
+.spec-type{
+  /* width: 100%; */
+  padding: 0;
+  margin: 0;
+  width: 178rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 66rpx;
+  line-height: 64rpx;
+  border-radius: 8rpx;
+  border-color: #575757;
+  background: none;
+} 
+.spec-active{
+  background: #575757;
+  
+}
+
+.type-txt{
+  color: #000000;
+  font-size: 27.78rpx;
+  font-family: 'HYg2gj';
+  /* display: inline-block; */
+}
+.active-txt{
+  color: #fff;
+}
+.more-detail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:0rpx 30rpx 30rpx;
+  padding-bottom: 116rpx;
+}
+.more-detail1{
+  /* position:absolute;
+  left:0;
+  right:0;
+  bottom:0; */
+  padding-top:50rpx;
+}
+.bottom-view{
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 86rpx;
+  background: #ffffff;
+  align-items: center;
+  justify-content: center;
+}
+.bottom-list{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 33.33rpx;
+  font-family: 'HYg2gj';
+}
+.cart-list{
+  flex-direction: row;
+}
+.center-list{
+  background: #ababab;
+}
+.center-txt{
+  color: #ffffff;
+  font-size: 33.29rpx;
+  font-family: 'HYg2gj';
+}
+.right-list{
+  background: #575757;
+  font-size: 33.29rpx;
+  font-family: 'HYg2gj';
+}
+.cart-txt{
+  color: #cf0202;
+  font-size: 33.29rpx;
+  margin-left: 20rpx;
+  line-height: 40rpx;
+  font-family: 'Avenir';
+  font-weight:bold;
+}
+.cart-icon-item{
+  position: relative;
+}
+.cart-num-content{
+  width: 24rpx;
+  height: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #cf0202;
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  border-radius: 20rpx;
+}
+.cart-num-i{
+  color: #fff;
+  font-size: 16.89rpx;
+  line-height: 16.89rpx;
+  font-family: 'HYg2gj';
+}
+
+.bus {
+  width: 48px;
+  height: 48px;
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  background: rgba(120, 188, 255, 0.6);
+  border: 1px solid rgba(0, 116, 255, 0.61);
+  border-radius: 50%;
+}
+
+.bus image {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -16px;
+}
+
+.count {
+  display: block;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  background: #ff4611;
+  padding: 0 6px;
+  border-radius: 10px;
+  color: #fff;
+  position: absolute;
+  left: 34px;
+  top: 0;
+}
+
+.scale {
+  background: rgba(120, 188, 255, 0.3);
+  border: 1px solid rgba(0, 116, 255, 0.4);
+}
+
+.scale image {
+  transform: scale(1.2);
+}
+
+.good_box {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  border-radius: 50%;
+  overflow: hidden;
+  left: 50%;
+  top: 50%;
+  z-index: +99;
+  border: 1px solid rgba(0, 116, 255, 0.61);
+  background: rgba(120, 188, 255, 0.2);
+}
+.good_box image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* 授权页面 */
+.start-page1{
+  width: 100%;
+  height: 100%;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/login-bg.jpg?versio=2');
+  background-size: cover;
+  /* overflow:hidden; */
+
+}
+.start-page2{
+  background-image: url('https://statics.maiscrm.com/k-bright/images/login1.jpg?versio=2');
+  background-size: cover;
+}
+.step2Img{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.start-content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+}
+.start-icon{
+  /* -webkit-animation: arrowGo 1s infinite linear;
+  -moz-animation: arrowGo 1s infinite linear;
+  -o-animation: arrowGo 1s infinite linear;
+  animation: arrowGo 1s infinite linear; */
+  /* position: absolute;
+  bottom: 40rpx;
+  left: 50%;
+  margin-left: -32rpx; */
+}
+.login-info{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 200rpx;
+  left: 0;
+}
+.login-info1{
+  bottom: 80rpx;
+}
+.info-txt{
+  color: #847f7f;
+  font-size: 31.3rpx;
+  line-height: 50rpx;
+  font-family: 'HYb2gj';
+}
+.login-btn{
+  background: #847f7f;
+  border-color: #847f7f;
+  color: #fff;
+  font-size: 36.5rpx;
+  margin-top: 40rpx; 
+  width: 343rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  font-family: 'HYb1gj';
+}
+.login-view{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.k-logo{
+  width: 135rpx;
+  height: 18rpx;
+  margin: 0 10rpx;
+  background: none;
+}
+.more-detail-top{
+  padding-top: 30rpx;
+}
+.view-img-content{
+  display: flex;
+  padding-bottom: 40rpx;
+  flex-direction: column;
+}
+.index-content{
+  background: url('https://statics.maiscrm.com/k-bright/images/bg.png') no-repeat;
+  background-size: cover;
+}
+.fen{
+  color: #e784aa;
+}
+.lan{
+  color: #85c5f6;
+}
+.zong{
+  color: #71273d;
+}
+.stype-img{
+  background: none;
+  width: 186rpx;
+  height: 46rpx;
+}
+.stype-img-2{
+  background: none;
+  width: 236rpx;
+  height: 46rpx;
+}

@@ -1,0 +1,265 @@
+image{
+  vertical-align:middle;
+  background: #f1f1f1;
+}
+.navigator-hover{
+  opacity: 1;
+}
+.input-style{
+  width: 100%;
+}
+.contact-img{
+  width: 100rpx;
+  height: 113rpx;
+  background: none;
+}
+.dot-icon{
+  position: absolute;
+  right: 10rpx;
+  bottom: 16rpx;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  z-index: 2;
+}
+.dot-default{
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 7rpx;
+  background: #d5d8da;
+  margin: 0 6rpx;
+} 
+.dot-active1{
+  background: #c3c8ce;
+}
+.contact{
+  position: fixed;
+  bottom: 122rpx;
+  right: 30rpx;
+  z-index: 2;
+}
+.contact-btn{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+/* https://statics.maiscrm.com/k-bright/images/icon.png */
+/* 地区选择向右图标 */
+.select-right-icon{
+  width: 13rpx;
+  height: 20rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -240rpx -92rpx;
+  position:absolute;
+  top: 50%;
+  margin-top: -10rpx;
+  right: 0rpx;
+}
+/* 未选择icon */
+.no-select{
+  width: 26rpx;
+  height: 26rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -30rpx -28rpx;
+}
+/* 已选择 */
+.cart-select-icon{
+  width: 26rpx;
+  height: 26rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -2rpx -28rpx;
+}
+/* 编辑 */
+.edit{
+  width: 32rpx;
+  height: 32rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -243rpx -48rpx;
+}
+/* 删除 */
+.del{
+  width: 29rpx;
+  height: 29rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -243rpx 0rpx;
+}
+/* 返回 */
+.back-icon{
+  width: 23rpx;
+  height: 40rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -54rpx -52rpx;
+}
+
+
+/* 购物车修改规格 */
+.pic-icon{
+  width: 13rpx;
+  height: 8rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -230rpx -43rpx;
+  margin-left: 10rpx;
+  margin-top: 12rpx;
+}
+/* 向右 */
+.right-icon{
+  width: 21rpx;
+  height: 38rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -208rpx 0rpx;
+}
+/* 地址icon */
+.add-icon{
+  width: 30rpx;
+  height: 39rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -79rpx 0rpx;
+}
+/* 微信支付icon */
+.wechat-icon{
+  width: 42rpx;
+  height:36rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -150rpx 0rpx;
+}
+/* 结算页底部中间线 */
+.line-icon{
+  width: 2rpx;
+  height: 86rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -275rpx -42rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -43rpx;
+}
+/* 刷新 */
+.refresh{
+  width: 28rpx;
+  height: 28rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -194rpx -50rpx;
+  position: absolute;
+  top: 13rpx;
+  right: 13rpx;
+}
+/* 物流其他状态 */
+.log-icon{
+  width: 27rpx;
+  height: 29rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -152rpx -101rpx;
+  position: absolute;
+  top: 0rpx;
+  left: -13.5rpx;
+}
+/* 物流当前状态 */
+.log-icon-active{
+  width: 27rpx;
+  height: 29rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -114rpx -101rpx;
+  position: absolute;
+  top: 0rpx;
+  left: -13.5rpx;
+}
+.search-icon{
+  width: 37rpx;
+  height: 37rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -135rpx -45rpx;
+}
+.add-cart-icon{
+  width: 38rpx;
+  height: 38rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -189rpx -98rpx;
+}
+/* 模态框背景 */
+.modal-content{
+  background-image: url(https://statics.maiscrm.com/k-bright/images/modal-bg.png);
+  background-size: 100% 100%;
+  padding: 45rpx 55rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+}
+/* 模态框关闭按钮 */
+.modal-close-icon{
+  width: 40rpx;
+  height: 40rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -0rpx -99rpx;
+}
+/* 启动页按钮 */
+.start-icon{
+  width: 64rpx;
+  height: 26rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: 0rpx 0rpx;
+}
+/* 我的头像框 */
+.head-bg-icon{
+  width: 154rpx;
+  height: 180rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/head-bg.png');
+  background-size: 100% 100%;
+}
+/* 订单详情location */
+.location-icon{
+  width: 30rpx;
+  height: 30rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: 0rpx -62rpx;
+}
+
+.logo-icon{
+  width: 251rpx;
+  height: 41rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/logo.png');
+  background-size: 100% 100%;
+}
+
+.right-icon1{
+  width: 11rpx;
+  height: 15rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -124rpx -5rpx;
+}
+.cart-icon{
+  width: 51rpx;
+  height: 43rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/icon.png');
+  background-size: 285rpx 143rpx;
+  background-position: -49rpx -99rpx;
+}
+.page4-bg{
+  width: 100%;
+  height: 127rpx;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/index-4-bg.jpg');
+  background-size: 100% 100%;
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "全部产品",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "pro-item": "/component/proItem/proItem",
+    "search-top": "/component/searchTop/searchTop"
+  }
+}

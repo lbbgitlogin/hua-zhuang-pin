@@ -1,0 +1,25 @@
+<!--component/hotItem/hotItem.wxml-->
+<view class="hot-item {{hotIndex%2 == 0 ? 'hot-type0' : 'hot-type1'}}" >
+  <navigator class="hot-item-content " url='/pages/details/details?id={{hotList.id}}&key={{hotList.key}}'>
+    <!-- <navigator > -->
+    <image src='{{hotList.img}}' class='hot-img' mode="widthFix"></image>
+    <!-- </navigator> -->
+    <view class='hot-info'>
+      <view class='hot-info-left'>
+        <text class='hot-tit {{hotList.product.name == "臻采透亮凝水啫喱凝霜：爆水小方" ? "" : "fontHyb"}}'>{{hotList.product.name2}}</text>
+        <text class='hot-tit {{hotList.product.name == "臻采透亮凝水啫喱凝霜：爆水小方" ? "" : "fontHyb"}}'>{{hotList.product.name1}}</text>
+        <!-- <text class='hot-txt'>{{hotList.stockType}}</text> -->
+      </view>
+      <!-- <block wx:if="{{isLogin}}">
+        <view class='hot-info-right'>
+        <button class='add-cart-icon' plain="{{true}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" style='color:#fff;border-radius:0rpx;background-color:transparent;border:0;padding:0;line-height:auto;overflow:visible;display:flex;' ></button>
+        </view>
+      </block>
+      <block wx:else>
+      <view class='hot-info-right' bindtap='addCart'>
+        <view class='add-cart-icon'></view>
+      </view> 
+      </block> -->
+    </view>
+  </navigator>
+</view>

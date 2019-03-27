@@ -1,0 +1,80 @@
+<!--pages/orderdetails/orderdetails.wxml-->
+<view class='container'>
+  <image id='bgmodule' mode="widthFix" src='https://statics.maiscrm.com/k-bright/images/bg.png'></image>
+  <view class='detail-content'>
+    <select-add select-type="0" select-obj="{{addInfo}}" is-bottom="{{false}}"></select-add>
+    <view class='detail-list'>
+        <balance-item wx:for="{{list}}" wx:key="{{index}}" balance-last="{{index == (list.length-1)}}" balance-list="{{item}}" balance-type="2"></balance-item>
+        
+    </view>
+  </view>
+  <view class='detail-info-content'>
+    <view class='detail-info'>
+      <view class='detail-info-list'>
+        <view class='info-left'>
+          <text class='info-tit'>订单编号</text>
+        </view>
+        <view class='info-right'>
+          <text class='info-tit ff'>{{info.number ? info.number : '暂无'}}</text>
+        </view>
+      </view>
+      <view class='detail-info-list'>
+        <view class='info-left'>
+          <text class='info-tit'>订单时间</text>
+        </view>
+        <view class='info-right'>
+          <text class='info-tit ff'>{{info.createdAt ? info.createdAt : '暂无'}}</text>
+        </view>
+      </view>
+      <view class='detail-info-list'>
+        <view class='info-left'>
+          <text class='info-tit'>订单状态</text>
+        </view>
+        <view class='info-right'>
+          <text class='info-tit ff'>{{info.status == 'unpaid' ? "待支付" : info.status == 'canceled' ? "已取消" : info.status == 'paid' ? "待发货" : info.status == 'delivered' ? "已发货" : info.status == 'deliver_failed' ? "发货失败" : "已完成"}}</text>
+        </view>
+      </view>
+      <view class='detail-info-list'>
+        <view class='info-left'>
+          <text class='info-tit'>订单总价</text>
+        </view>
+        <view class='info-right'>
+          <text class='info-tit ff fb'>¥{{info.totalPrice ? info.totalPrice : '暂无'}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+    <view class='btn-content'>
+      <!-- <button type="primary" bindtap="operate" data-type='0' class='btn' wx:if="{{info.status == 'delivered'}}">确认收货</button> -->
+      <button type="warn" bindtap="operate" data-type='1' class='btn' wx:if="{{info.status == 'unpaid'}}">取消订单</button>
+    </view>
+  <!-- unpaid: 待支付
+canceled: 订单失效
+paid: 已支付待发货
+delivered: 已发货
+deliver_failed: 发货失败
+completed: 已完成 -->
+  <view class='contact {{info.status == "delivered" || info.status == "completed" || info.status == "unpaid" ? "" : "contact1"}}' >
+    <image src='../../images/contact.png' class='contact-img'></image>
+    <button open-type="contact" class='contact-btn' bindtap='contact'>客服</button>
+  </view>
+  <navigator class='new-add' url="/pages/logistics/logistics?number={{info.shipment.number}}&con={{info.shipment.expCom}}&name={{info.shipment.expName}}&orderNumber={{info.number}}" wx:if="{{info.status == 'completed'}}">
+    <view class='location-icon'></view>
+    <text class='add-txt'>查看物流</text>
+  </navigator>
+  <view class='cart-bottom' wx:if="{{info.status == 'delivered'}}">
+    <view class='cart-bottom-list' bindtap="operate" data-type='0' >
+      <image class='confirm-icon' src='../../images/icon1.png'></image>
+      <text class='add-txt'>确认收货</text>
+    </view>
+    <navigator class='cart-bottom-list' url="/pages/logistics/logistics?number={{info.shipment.number}}&con={{info.shipment.expCom}}&name={{info.shipment.expName}}&orderNumber={{info.number}}">
+        <view class='location-icon'></view>
+        <text class='add-txt'>查看物流</text>
+    </navigator>
+    <view class='line-icon'></view>
+  </view>
+  <view class='new-add' wx:if="{{info.status == 'unpaid'}}" bindtap='getWechatParams'>
+    <view class='wechat-icon'></view>
+    <text class='add-txt'>现在支付</text>
+  </view>
+</view>

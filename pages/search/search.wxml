@@ -1,0 +1,41 @@
+<!--pages/search/search.wxml-->
+<view class='container'>
+  <image id='bgmodule' mode="widthFix" src='https://statics.maiscrm.com/k-bright/images/bg2.jpg'></image>
+  <view class='search-content'>
+    <search-top search-txt="{{searchTxt}}" is-bottom="{{false}}" bind:search="search"></search-top>
+    <view class='search-all'>
+      <text class='search-txt'>搜索结果</text>
+      <view class='search-list'>
+        <block wx:if="{{list.length > 0}}">
+        <balance-item wx:for="{{list}}" wx:key="{{index}}" balance-index="{{index}}" balance-list="{{item}}" balance-type="0"></balance-item>
+        </block>
+        <block wx:else>
+          <view id='empty-list'>
+            <text class='empty-txt'>暂无相关商品，换个搜索试试~</text>
+          </view>
+        </block>
+      </view>
+      <view class='hot'>
+        <view class='line-hot line-left '>
+          <image src='../../images/line-left.png' class='line-hot-icon'></image>
+        </view>
+        <view class='line-hot line-right'>
+          <image src='../../images/line-right.png' class='line-hot-icon'></image>
+        </view>
+        <text class='hot-txt'>热门搜索</text>
+      </view>
+      <block wx:if="{{hotList.length > 0}}">
+      <view class='search-hot'>
+        <view class='hot-li' wx:for="{{hotList}}" wx:key="{{index}}" >
+          <hot-item hot-index="{{index}}" is-login="{{!hasUserInfo && canIUse}}" bind:getinfo="getInfo" hot-list="{{item}}"></hot-item>
+        </view>
+      </view>
+      </block>
+      <block wx:else>
+        <view id='empty-list'>
+          <text class='empty-txt'>暂无热门搜索列表</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

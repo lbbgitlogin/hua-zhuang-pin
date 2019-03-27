@@ -1,0 +1,130 @@
+<!--pages/applyresult/applyresult.wxml-->
+<block wx:if="{{!isAuto}}">
+  <view class='start-page1 {{isphone ? "" : "start-page2"}}' >
+    <!-- <image src='{{step2Img}}' style='width:100%;height:100%;' class='step2Img' mode='widthFix' bindload="loadend"></image> -->
+    <view class='login-info {{isphone ? "" : "login-info1"}}'>
+      <!-- <view class='login-view'>
+        <image class='k-logo' src='../../images/k-logo.png' mode='widthFix'></image>
+        <text class='info-txt'>小程序申请获得以下权限：</text>
+      </view>
+      <text class='info-txt'>获得您的公开信息（昵称、头像等）</text> -->
+      <button class='login-btn' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权 </button>
+    </view>
+  </view>
+</block>
+<block wx:else>
+<view class='container '>
+  <!-- <image class='close-video-icon' src='../../images/close.png' bindtap='changeDailog' data-status="{{true}}" wx:if="{{!isTrue}}"></image> -->
+  <view class='sharecontent' wx:if="{{!isTrue}}" bindtap='changeDailog' data-status="{{true}}">
+    <image class='share'  src='https://statics.maiscrm.com/k-bright/images/share.png?version=1' mode='widthFix'></image>
+  </view>
+  <image id='bgmodule' src='https://statics.maiscrm.com/k-bright/images/bg3.jpg'></image>
+
+  <view class='result-imgcontent'>
+    <view class='result-imgcontent1'>
+    <image src='{{info.goods[0].pictures[0].url}}' mode="widthFix" class='result-img'></image>
+    </view>
+    <view class='result-transparent'>
+      <text class='result-tit'>{{time.name}}</text>
+      <text class='result-txt'>活动时间：{{time.startTime+'-'+time.endTime}}</text>
+    </view>
+  </view>
+  <view class='result-content' style='height: {{vheight}}px'>
+    <view class='result-info {{info.auditStatus == "fail" ? "result-info1" : ""}}'>
+      <block wx:if="{{info.auditStatus == 'wait'}}">
+        <text class='result-txt ff'>尊敬的顾客:</text>
+        <view class='line-view'>
+          <text class='result-txt ff'>感谢您参与</text>
+          <image class='k-logo' src='../../images/k-logo.png'></image>
+          <text class='result-txt ff'>正装试用申领</text>
+        </view>
+        <text class='result-txt ff'>本次活动奖品共计5份</text>
+        <text class='result-txt ff'>中奖名单将于{{time.openingTime1}}</text>
+        <view class='line-view'>
+          <text class='result-txt ff'>通过</text>
+          <image class='k-logo' src='../../images/k-logo.png'></image>
+          <text class='result-txt ff'>公众号公布</text>
+        </view>
+        <text class='result-txt ff' >或于「我的」-申领试用查询</text>
+        <text class='result-txt ff'>敬请关注活动后续</text>
+      </block>
+      <block wx:if="{{info.auditStatus == 'fail'}}">
+        <view class='result-top'>
+          <text class='result-top-tit'>成功申领者名单</text>
+          <image src='../../images/line-center.png' class='result-top-img'></image>
+        </view>
+        <scroll-view scroll-y style="height: 260rpx;" class='scroll-h'>
+          <block wx:if="{{rewardList.length > 0}}">
+          <view class='list' wx:for="{{rewardList}}" wx:key="{{index}}">
+            <view class='list-l'>
+              <image src='{{item.avatar}}' class='list-img'></image>
+            </view>
+            <view class='list-r'>
+              <text class='list-t'>{{item.name}}</text>
+            </view>
+          </view>
+          </block>
+          <block wx:else>
+            <view class='no-item'>
+              <text class='empty-txt'>暂无列表</text>
+            </view>
+          </block>
+        </scroll-view>
+      </block> 
+      <block wx:if="{{info.auditStatus == 'pass'}}">
+        <text class='result-txt ff'>尊敬的顾客：</text>
+        <view class='line-view'>
+          <text class='result-txt ff'>感谢您参与</text>
+          <image class='k-logo' src='../../images/k-logo.png'></image>
+          <text class='result-txt ff'>正装申领</text>
+        </view>
+        <text class='result-txt ff'>恭喜您成为五位中奖用户之一</text>
+        <text class='result-txt ff'>请于开奖日起一周内</text>
+        <text class='result-txt ff'>前往如下链接填写收货信息</text>
+        <text class='result-txt ff'>请确保信息的准确性</text>
+        <text class='result-txt ff'>否则投递失败将视为放弃资格</text>
+      </block>
+      <block wx:if="{{info.auditStatus == 'accepted'}}">
+        <text class='result-txt ff'>尊敬的顾客：</text>
+        <view class='line-view'>
+          <text class='result-txt ff'>感谢您参与</text>
+          <image class='k-logo' src='../../images/k-logo.png'></image>
+          <text class='result-txt ff'>试用申领</text>
+        </view>
+        <text class='result-txt ff'>您已成功领取产品正装一份</text>
+        <view class='line-view'>
+          <text class='result-txt ff'>独一无二的</text>
+          <image class='k-lock' src='../../images/lock.png'></image>
+          <text class='result-txt ff'>技术</text>
+        </view>
+        <view class='line-view'>
+          <text class='result-txt ff'>将给您一触肌</text>
+          <view class='huo'>
+            <text class='result-txt ff'>「活」</text>
+            <text class='huo-start'>*</text>
+          </view>
+          <text class='result-txt ff'>的护肤体验</text>
+        </view>
+        <text class='result-txt ff'>高阶宠肤的秘密</text>
+        <text class='result-txt ff'>就此揭晓</text>
+      </block>
+    </view>
+    <view class='result-btn-content'>
+      <view class='result-btn' bindtap='goBack'>
+        <text class='result-btn-txt'>{{info.auditStatus == 'wait' ? '返回' : info.auditStatus == 'fail' ? '返回' : info.auditStatus == 'pass' ? '去领奖' : info.auditStatus == 'accepted' ? '追踪物流' : '返回'}}</text>
+      </view>
+    </view>
+    <view class='right-tip'>
+      <view class='right-tip-c'>
+        <text class='xing'>*</text>
+        <text class='right-tip-t'>肌肤活力</text>
+      </view>
+    </view>
+  </view>
+  <view class='contact' style='bottom:55rpx;'>
+    <image src='../../images/contact.png' class='contact-img'></image>
+    <button open-type="contact" class='contact-btn'>客服</button>
+  </view>
+  <!-- <view class='result-all'></view> -->
+</view>
+</block>

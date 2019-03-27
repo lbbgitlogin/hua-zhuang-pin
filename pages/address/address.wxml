@@ -1,0 +1,18 @@
+<!--pages/address/address.wxml-->
+<view class='container'>
+  <image id='bgmodule' mode="widthFix" src='https://statics.maiscrm.com/k-bright/images/bg2.jpg'></image>
+  <view class='add-content'>
+    <block wx:if="{{list.length > 0}}">
+      <add-item wx:for="{{list}}" wx:key="{{index}}" add-index="{{index}}" add-list="{{item}}" bind:refreshData="refreshData" add-type="{{type}}" add-id="{{id}}"></add-item>
+    </block>
+    <block wx:else>
+      <view id='empty-list'>
+        <text class='empty-txt'>暂无列表</text>
+      </view>
+    </block>
+  </view>
+  <navigator class='new-add' url="/pages/newaddress/newaddress?id=0&type=0">
+    <text class='add-tit'>+</text>
+    <text class='add-txt'>新增收货地址</text>
+  </navigator>
+</view>

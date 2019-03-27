@@ -1,0 +1,121 @@
+<!--pages/apply/apply.wxml-->
+<block wx:if="{{!isAuto}}">
+  <view class='start-page1 {{isphone ? "" : "start-page2"}}' >
+    <!-- <image src='{{step2Img}}' style='width:100%;height:100%;' class='step2Img' mode='widthFix' bindload="loadend"></image> -->
+    <view class='login-info {{isphone ? "" : "login-info1"}}'>
+      <!-- <view class='login-view'>
+        <image class='k-logo' src='../../images/k-logo.png' mode='widthFix'></image>
+        <text class='info-txt'>小程序申请获得以下权限：</text>
+      </view>
+      <text class='info-txt'>获得您的公开信息（昵称、头像等）</text> -->
+      <button class='login-btn' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权 </button>
+    </view>
+  </view>
+</block>
+<block wx:else>
+<view class="container bgapp">
+  
+  <image id='bgmodule' mode="widthFix" src='https://statics.maiscrm.com/k-bright/images/bg2.jpg'></image>
+  <view class='apply-content'>
+    <image class='bg-img' src='{{bgimg}}' mode='widthFix'></image>
+    <!-- <image class='bg-img' src='../../images/zong.jpg' mode='widthFix'></image> -->
+    <view class='logo-content'>
+      <image class='logo-icon2' src='../../images/logo.png'></image>
+    </view>
+    <view class='apply-info1 {{isphone ? "apply-info2" : ""}}'>
+      <!-- <text class='apply-info-tit'>一颗肌「活」主角光环</text> -->
+      <block wx:if="{{info.specName == '7粒装'}}">
+      <image class='app-img-fen' wx:if="{{info.name1 == '光采透亮'}}" src='../../images/fen.png' mode='aspectFit'></image>
+      <image class='app-img-lan' wx:if="{{info.name1 == '盈润水光'}}" src='../../images/lan.png' mode='aspectFit'></image>
+      <image class='app-img-zong' wx:if="{{info.name1 == '赋颜菁粹'}}" src='../../images/zong.png' mode='aspectFit'></image>
+      <image class='app-img-txt' src='../../images/apply-txt1.png' mode='aspectFit'></image>
+      <!-- <text class='apply-info-tit '>{{info.name3}}</text> -->
+      <text class='apply-info-txt {{info.name1 == "光采透亮" ? "fen" : info.name1 == "盈润水光" ? "lan" : "zong"}}'>{{info.name1}}</text>
+      </block>
+      <block wx:elif="{{info.specName == '4片装'}}">
+        <block wx:if="{{info.name1 == '小蓝钻'}}">
+        <image class='app-img-b'  src='../../images/b.png' mode='aspectFit'></image>
+        <image class='stype-img' src='../../images/blue.png' mode='widthFix'></image>
+        </block>
+        <block wx:elif="{{info.name1 == '小黄钻'}}">
+        <image class='app-img-y' src='../../images/y.png' mode='aspectFit'></image>
+        <image class='stype-img' src='../../images/yellow.png' mode='widthFix'></image>
+        </block>
+        <block wx:elif="{{info.name1 == '小银钻'}}">
+        <image class='app-img-g'src='../../images/g.png' mode='aspectFit'></image>
+        <image class='stype-img' src='../../images/gray.png' mode='widthFix'></image>
+        </block>
+        <block wx:elif="{{info.name1 == '小亮钻'}}">
+        <image class='app-img-g'src='../../images/g.png' mode='aspectFit'></image>
+        <image class='stype-img' src='../../images/gray1.png' mode='widthFix'></image>
+        </block>
+        <block wx:else>
+        <image class='app-img-gn' src='../../images/gn.png' mode='aspectFit'></image>
+        <image class='stype-img' src='../../images/green.png' mode='widthFix'></image>
+        </block>
+        <!-- <image class='app-img-txt1' src='../../images/gn.png' mode='aspectFit'></image> -->
+      </block>
+      <block wx:if="{{info.name1 == '极光水'}}">
+        <image class='app-img-b1'  src='../../images/jhs.png' mode='aspectFit'></image>
+        <text class='apply-info-bsxf '>{{info.name2}}</text>
+        <image class='stype-img' src='../../images/jgs.png' mode='widthFix'></image>
+      </block>
+      <block wx:if="{{info.name1 == '极光瓶'}}">
+        <image class='app-img-b1'  src='../../images/jhy.png' mode='aspectFit'></image>
+        <text class='apply-info-bsxf '>{{info.name2}}</text>
+        <image class='stype-img' src='../../images/jgp.png' mode='widthFix'></image>
+      </block>
+      <block wx:if="{{info.name1 == '爆水小方'}}">
+        <image class='app-img-b1'  src='../../images/glms.png' mode='aspectFit'></image>
+        <text class='apply-info-bsxf1 '>{{info.name2}}</text>
+        <image class='stype-img-2' src='../../images/bsxlf.png' mode='widthFix'></image>
+      </block>
+      <block wx:if="{{info.name2 == '臻采透亮洁面啫喱'}}">
+        <image class='app-img-b1'  src='../../images/jmgl.png' mode='aspectFit'></image>
+        <text class='apply-info-bsxf1 '>{{info.name2}}</text>
+      </block>
+      <block wx:if="{{info.name2 == '凝锁护颜洁面粉'}}">
+        <image class='app-img-b1'  src='../../images/hyf.png' mode='aspectFit'></image>
+        <text class='apply-info-bsxf '>{{info.name2}}</text>
+      </block>
+      <block wx:if="{{info.name2 == '臻采透亮盈润凝水面霜'}}">
+        <image class='app-img-b1'  src='../../images/nsms.png' mode='aspectFit'></image>
+        <text class='apply-info-bsxf }}'>{{info.name2}}</text>
+      </block>
+    </view>
+    <view class='apply-bottom {{isphone ? "apply-bottom1" : ""}}'>
+      <view class='apply-info'>
+      <view class='apply-info-rule' bindtap='changenStatus' data-status="{{true}}">
+        <text class='apply-info-rule-txt'>[ 活动规则 ]</text>
+      </view>
+      </view>
+      <view class='apply-btn' bindtap='applyNow'>
+        <text class='apply-btn-txt'>即刻申领</text>
+      </view>
+    </view>
+  </view>
+  <view class='right-tip {{isphone ? "right-tip1" : ""}}'>
+    <block wx:if="{{info.specName == '7粒装'}}">
+      <view class='right-tip-c'>
+        <text class='xing'>*</text>
+        <text class='right-tip-t'>鲜活</text>
+      </view>
+      <view class='right-tip-c'>
+        <text class='xing'>*</text>
+        <text class='right-tip-t'>凝锁焕颜凝珠固体精华</text>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='right-tip-c'>
+        <text class='xing'>*</text>
+        <text class='right-tip-t'>三明治</text>
+      </view>
+      <view class='right-tip-c'>
+        <text class='xing'>*</text>
+        <text class='right-tip-t'>水解胶原（哥斯达黎加进口原料）</text>
+      </view>
+    </block>
+  </view>
+  <rule-modal bind:modalTap="changenStatus" data-status="{{false}}" modal-status="{{modalshow}}" wx:if="{{modalshow}}"></rule-modal>
+</view>
+</block>

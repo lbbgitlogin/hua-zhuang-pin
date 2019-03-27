@@ -1,0 +1,139 @@
+<!--index.wxml-->
+<view class="container index-content" >
+  <swiper style='height:100%;display:block'  interval="{{config.interval}}" duration="{{config.duration}}" vertical="{{true}}" current="{{config.current}}" bindchange="bindchange1">
+      <swiper-item >
+        <view class='start-page' >
+          <!-- <video id="myVideo" src="https://statics.maiscrm.com/k-bright/video/K-Bright-Brand.mp4" controls bindpause="bindpause" bindplay="bindplay"  poster='../../images/comein.jpg' bindtimeupdate="bindtimeupdate" initial-time="{{initialTime}} "objectFit="cover" wx:if="{{isplay}}" style='{{!isplay ? "z-index:-1" : ""}}' custom-cache="{{false}}">
+          <cover-view class='close-video' bindtap='pause'>
+            <cover-image class='close-video-icon' src='../../images/close.png'></cover-image>
+          </cover-view>
+          </video> -->
+          <image src='../../images/comein.jpg' style='width:100%;' mode='widthFix' bindload="loadend" data-status='{{true}}'></image>
+          <view class='start-icon' bindtap='chageCurrent' data-current="{{1}}" ></view>
+          <image class='player'  src='../../images/play.png' bindtap='changeDailog' data-status="{{true}}"></image>
+          <!-- <button open-type="openSetting" class='opens'>开启授权设置</button> -->
+        </view>
+      </swiper-item>
+      <swiper-item>
+      <!-- bindscrolltolower="lower" -->
+      <scroll-view id="j_page" scroll-y style="height: 100%;" bindscrolltolower="lower"  bindscrolltoupper="upper"  data-current="{{1}}" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+        <view class='item-view'>
+          <image src="https://statics.maiscrm.com/k-bright/images/index2-1-1.jpg?version=1" class="slide-image" mode='widthFix'/>
+          <image src="https://statics.maiscrm.com/k-bright/images/index2-1-2.jpg?version=1" class="slide-image" mode='widthFix'/>
+          <image src="https://statics.maiscrm.com/k-bright/images/index4-img.jpg?version=1" class="slide-image" mode='widthFix'/>
+          <view style='position: relative;'>
+            <view style='position: relative;' >
+            <view class='dot'>
+              <view wx:for="{{imgUrls}}" wx:key="{{index}}" class='dot-index {{subCurrent == index ? "dot-active" : ""}}'></view> 
+            </view>
+              <swiper 
+                class='sw-v-v'
+                autoplay="{{false}}" interval="{{config.interval}}" duration="{{config.duration}}" current='{{subCurrent}}' bindchange="bindchange"
+                bindchange="bindchange" 
+                style='height: 1018rpx;z-index:1'>
+                <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+                  <swiper-item>
+                    <image src="{{item.bimg}}" class="slide-image" mode="widthFix"  bindload="imageLoad" data-id='{{index}}' bindtap='toPro'/>
+                  </swiper-item>
+                </block>
+              </swiper>
+              
+            </view>
+            
+            <view class='item-view'>
+              <image src="https://statics.maiscrm.com/k-bright/images/index-3-1.jpg?version=1" class="slide-image" mode='widthFix'/>
+              <view class='view-gif'>
+                <image src="https://statics.maiscrm.com/k-bright/images/index-gif1.gif" class="slide-image slide-gif" mode='widthFix'/>
+                
+                <image src="https://statics.maiscrm.com/k-bright/images/index-3-2-1-bg.jpg?version=1" class="slide-image slide-image1" mode='widthFix'/>
+              </view>
+              <image src="https://statics.maiscrm.com/k-bright/images/index-3-2.jpg?version=1" class="slide-image slide-image2" mode='widthFix'/>
+              <view class='view-gif'>
+                <image src="https://statics.maiscrm.com/k-bright/images/index-gif2.gif" class="slide-image slide-gif" mode='widthFix'/>
+                <image src="https://statics.maiscrm.com/k-bright/images/index-3-2-2-2.jpg?version=1" class="slide-image slide-image1" mode='widthFix'/>
+              </view>
+              <image src="https://statics.maiscrm.com/k-bright/images/index-3-3.jpg?version=1" class="slide-image slide-image2" mode='widthFix'/>
+              <view class='view-gif'>
+                <image src="https://statics.maiscrm.com/k-bright/images/index-gif3.gif" class="slide-image slide-gif" mode='widthFix'/>
+                <image src="https://statics.maiscrm.com/k-bright/images/index-3-2-3.jpg?version=1" class="slide-image slide-image1" mode='widthFix'/>
+              </view>
+              <image src="https://statics.maiscrm.com/k-bright/images/index-3-4.jpg?version=1" class="slide-image" mode='widthFix'/>
+            
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <!-- <swiper-item style="position:relative" class="bgwhite">
+        <image src="https://statics.maiscrm.com/k-bright/images/index4-img.jpg" class="slide-image" mode='widthFix'/>
+        <view style='position:relative;height:100%;'>
+          <swiper 
+            autoplay="{{true}}" interval="{{config.interval}}" duration="{{config.duration}}" current='{{subCurrent}}' bindchange="bindchange"
+            style='height:{{imgheights[0]}}rpx;position:relative'>
+            <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+              <swiper-item>
+                <image src="{{item.bimg}}" class="slide-image" mode="widthFix"  bindload="imageLoad" data-id='{{index}}' bindtap='toPro'/>
+              </swiper-item>
+            </block>
+          </swiper>
+          <view class='dot'>
+            <view wx:for="{{imgUrls}}" wx:key="{{index}}" class='dot-index {{subCurrent == index ? "dot-active" : ""}}' data-current="{{index}}" bindtap='changeStepSub'></view>
+          </view>
+          <image src="{{imgUrls[subCurrent].timg}}" class="slide-image" mode='widthFix'></image>
+        </view>
+        <view class='page4-txt' wx:if="{{subCurrent == 0}}">
+          <view class='page-txt1' style='margin-bottom:-50rpx;'>
+          <image src='../../images/txt-img1.png' class='minitxt-tip'></image>
+          </view>
+          <text class='minitxt'>*维生素C</text>
+          <text class='minitxt'>**积雪草叶提取物</text>
+          <text class='minitxt'>***肌肤活力</text>
+        </view>
+        <view class='page4-txt ' wx:if="{{subCurrent == 1}}">
+          <view class='page-txt1'>
+          <image src='../../images/txt-img.png' class='minitxt-tip'></image>
+          </view>
+        </view>
+        <view class='page4-txt' wx:if="{{subCurrent == 2}}">
+          <view class='page-txt1' style='margin-bottom:-30rpx;'>
+            <image src='../../images/txt-img.png' class='minitxt-tip'></image>
+          </view>
+          <text class='minitxt'>*玻璃苣籽油</text>
+          <text class='minitxt'>**二裂酵母发酵产物溶胞物</text>
+        </view>
+        <view class='start-icon' bindtap='chageCurrent' data-current="{{3}}" ></view>
+      </swiper-item>
+      <swiper-item >
+        <scroll-view lower-threshold="{{20}}" scroll-top="{{scrollTop1}}" id="j_page1" scroll-y style="height: 100%;"   bindscrolltoupper="upper" data-current="{{3}}"  bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+        <view class='item-view'>
+          <image src="../../images/index-3-1.jpg" class="slide-image" mode='widthFix'/>
+          <view class='view-gif'>
+            <image src="https://statics.maiscrm.com/k-bright/images/index-gif1.gif" class="slide-image slide-gif" mode='widthFix'/>
+            <image src="../../images/index-3-2-1-bg.jpg" class="slide-image slide-image1" mode='widthFix'/>
+          </view>
+          <image src="../../images/index-3-2.jpg" class="slide-image" mode='widthFix'/>
+          <view class='view-gif'>
+            <image src="https://statics.maiscrm.com/k-bright/images/index-gif2.gif" class="slide-image slide-gif" mode='widthFix'/>
+            <image src="../../images/index-3-2-2-2.jpg" class="slide-image slide-image1" mode='widthFix'/>
+          </view>
+          <image src="../../images/index-3-3.jpg" class="slide-image" mode='widthFix'/>
+          <view class='view-gif'>
+            <image src="https://statics.maiscrm.com/k-bright/images/index-gif3.gif" class="slide-image slide-gif" mode='widthFix'/>
+            <image src="../../images/index-3-2-3.jpg" class="slide-image slide-image1" mode='widthFix'/>
+          </view>
+          <image src="../../images/index-3-4.jpg" class="slide-image" mode='widthFix'/>
+          
+        </view>
+        </scroll-view>
+      </swiper-item> -->
+      
+  </swiper>
+  <view class='video-dailog' wx:if="{{videoShow}}">
+    <view class='video-content'>
+      <image class='close-video-icon' src='../../images/close.png' bindtap='changeDailog' data-status="{{false}}"></image>
+      <view class='video-info'>
+        <video id="myVideo" src="https://statics.maiscrm.com/k-bright/video/K_Bright_Brand_film.mp4" controls style='height: {{vHeight}}px' bindtimeupdate="bindtimeupdate" initial-time="{{initialTime}}"></video>
+      </view>
+    </view>
+  </view>
+</view>

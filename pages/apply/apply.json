@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "正装申领",
+  "disableScroll": true,
+  "usingComponents": {
+    "rule-modal": "/component/ruleModal/ruleModal"
+  }
+}

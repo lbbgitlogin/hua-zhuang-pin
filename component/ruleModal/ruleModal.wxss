@@ -1,0 +1,80 @@
+/* component/ruleModal/ruleModal.wxss */
+@import '../../utils/common.wxss';
+.modal-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.66);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 47rpx;
+  z-index: 10;
+}
+.modal-content{
+  position: relative;
+}
+.modal-close{
+  position: absolute;
+  top: -50rpx;
+  right: -14rpx;
+}
+.modal-center{
+  display: flex;
+  flex-direction: column;
+}
+.modal-top{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+.hot-txt{
+  color: #646668;
+  font-size: 44.44rpx;
+  font-family: 'HYb2gj';
+}
+.hot-tit{
+  color: #646668;
+  font-size: 22.22rpx;
+  line-height: 40rpx;
+  font-family: 'HYg2gj';
+}
+.line-hot{
+  width: 100rpx;
+  height: 1rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: 0.5rpx;
+}
+.line-hot-icon{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.line-left{
+  left: 20rpx;
+}
+.line-right{
+  right: 20rpx;
+}
+
+@keyframes fade-in {  
+    0% {opacity: 0;}/*初始状态 透明度为0*/  
+    50% {opacity: 0.5;}/*过渡状态 透明度为0*/  
+    100% {opacity: 1;}/*结束状态 透明度为1*/  
+}  
+@-webkit-keyframes fade-in {/*针对webkit内核*/  
+    0% {opacity: 0;}/*初始状态 透明度为0*/  
+    50% {opacity: 0.5;}/*过渡状态 透明度为0*/  
+    100% {opacity: 1;}/*结束状态 透明度为1*/  
+}  
+
+.modal-container {    
+    animation: fade-in;/*动画名称*/  
+    animation-duration: 0.5s;/*动画持续时间*/  
+    -webkit-animation:fade-in 0.5s;/*针对webkit内核*/  
+}  

@@ -1,0 +1,100 @@
+<!--pages/newaddress/newaddress.wxml-->
+<view class='container'>
+  <image id='bgmodule' mode="widthFix" src='https://statics.maiscrm.com/k-bright/images/bg2.jpg'></image>
+  <view class='new-add'>
+    <view class='input-content'>
+      <view class='input-list'>
+        <view class="list-left">
+          <text class='left-txt'>收件人</text>
+        </view>
+        <view class='list-right'>
+          <input name="name" id="name" placeholder-style='color: #dedede;font-size: 27.78rpx;' class='input-style' bindinput="bindKeyInput" placeholder="名字" value='{{form.name}}' />
+        </view>
+      </view>
+      <view class='input-list'>
+        <view class="list-left">
+          <text class='left-txt'>联系方式</text>
+        </view>
+        <view class='list-right'>
+          <input name="phone" type="number" placeholder-style='color: #dedede;font-size: 27.78rpx;' id="phone" class='input-style' bindinput="bindKeyInput" placeholder="手机" value='{{form.phone}}' />
+        </view>
+      </view>
+      <view class='input-list'>
+        <view class="list-left">
+          <text class='left-txt'>所在地区</text>
+        </view>
+        <view class='list-right' bindtap='selectDistrict'>
+          <input disabled="true" placeholder-style='color: #dedede;font-size: 27.78rpx;' name="areaInfo" id="areaInfo" class='input-style' bindinput="bindKeyInput" placeholder="省、市、区" value='{{areaInfo}}' />
+          <view class='select-right-icon'></view>
+        </view>
+      </view>
+      <view class='input-list'>
+        <view class="list-left">
+          <text class='left-txt'>详细地址</text>
+        </view>
+        <view class='list-right'>
+          <input name="detail" id="detail" placeholder-style='color: #dedede;font-size: 27.78rpx;' class='input-style' bindinput="bindKeyInput" placeholder="道路，楼牌号码" value='{{form.detail}}' />
+        </view>
+      </view>
+      <view class='input-list'>
+        <view class="list-left">
+          <text class='left-txt'>邮编</text>
+        </view>
+        <view class='list-right'>
+          <input name="zipCode" type="number" placeholder-style='color: #dedede;font-size: 27.78rpx;' id="zipCode" class='input-style' bindinput="bindKeyInput" placeholder="邮政编码（选填）" value='{{form.zipCode}}' />
+        </view>
+      </view>
+    </view>
+    <view class='setDefault'>
+      <view class='setDefault-left'>
+        <text class='left-txt'>设为默认</text>
+      </view>
+      <block wx:if="{{form.isDefault}}">
+        <view class='setDefault-right' bindtap='chageDefault' data-status="{{false}}">
+          <view class='cart-select-icon'></view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class='setDefault-right' bindtap='chageDefault' data-status="{{true}}">
+          <view class='no-select'></view>
+        </view>
+      </block>
+    </view>
+    <view class='sub-view' bindtap='onSubmit'>
+      <button class='sub-btn btn-txt'>保存</button>
+      <!-- <view class='sub-btn'>
+        <text class='btn-txt'>保存</text>
+      </view> -->
+    </view>
+  </view>
+  
+  <view class="dialog-mask " style="z-index:11;visibility:{{addressMenuIsShow ? 'visible': 'hidden'}}"  >
+    <view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+    <view class='top-content'>
+      <view class='top-content-list' catchtap="cityCancel">
+      <text  class='cancel'>取消</text>
+      </view>
+      <view class='top-content-list' catchtap="citySure" style='justify-content:flex-end;display:flex;'>
+      <text class='cancel' >确定</text>
+      </view>
+    </view>
+    <picker-view style="width: 100%; height: 470rpx;" bindchange="cityChange" value="{{value}}" wx:key="">
+      <picker-view-column>
+        <view wx:for="{{provinces}}" wx:key="index" class="picker-item">
+          <text class="picker-item-txt">{{item.name}}</text>
+        </view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{citys}}" class="picker-item" wx:key="index">
+          <text  class="picker-item-txt">{{item.name}}</text>
+        </view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{areas}}" class="picker-item" wx:key="index">
+          <text class="picker-item-txt">{{item.name}}</text>
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+  </view>
+</view>

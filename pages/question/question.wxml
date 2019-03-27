@@ -1,0 +1,123 @@
+<!--pages/question/question.wxml-->
+<view class='container '>
+  <image id='bgmodule' src='https://statics.maiscrm.com/k-bright/images/bg3.jpg'></image>
+
+  <view class='result-imgcontent'>
+    <image src='{{info.pic[0].url}}' mode="widthFix" class='result-img'></image>
+  </view>
+  <view class='result-content' style='height: {{vheight}}px'>
+    <view class='result-info'>
+      <block wx:if="{{step == '1'}}">
+      <view class='step4'>
+        <view class='step4-top'>
+          <text class='txt1'>性别：</text>
+        </view>
+        <view class='step4-info'>
+          <block wx:for="{{sexList}}" wx:key="{{index}}">
+            <view data-itemid="{{item.name}}" bindtap='selectStep4' class="step4-list {{form.sex == item.name ? 'step4-active' : ''}}">
+              <text class="step4-txt {{form.sex == item.name ? 'step4-active-txt' : ''}}">{{item.name}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      </block>
+      <block wx:if="{{step == '2'}}">
+      <view class='step1'>
+        <view class='step1-left'>
+          <text class='txt1'>年龄：</text>
+        </view>
+        <view class='step1-right'>
+          <input name="age" type='number' id="age" class='input-style' bindinput="bindKeyInput" placeholder="" value='{{form.age}}' />
+        </view>
+      </view>
+      <view class='step1'>
+        <view class='step1-left'>
+          <text class='txt1'>常用护肤品品牌：</text>
+        </view>
+        <view class='step1-right'>
+          <input name="commonBrands" id="commonBrands" class='input-style' bindinput="bindKeyInput" placeholder="" value='{{form.commonBrands}}' />
+        </view>
+      </view>
+      </block>
+      <block wx:if="{{step == '3'}}">
+      <view class='step4'>
+        <view class='step4-top'>
+          <text class='txt1'>肤质：</text>
+        </view>
+        <view class='step4-info'>
+          <block wx:for="{{step4list}}" wx:key="{{index}}">
+            <view data-itemid="{{item.name}}" data-itemtag="{{item.tag}}" bindtap='selectStep4' class="step4-list {{form.skinType == item.name ? 'step4-active' : ''}}">
+              <text class="step4-txt {{form.skinType == item.name ? 'step4-active-txt' : ''}}">{{item.name}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      </block>
+      <block wx:if="{{step == '4'}}">
+      <view class='step4'>
+        <view class='step4-top'>
+          <text class='txt1 '>购买护肤品时在意的因素：</text>
+          <text class='txt1  txtc1'>（至少选2个）</text>
+        </view>
+        <view class='step4-info'>
+          <block wx:for="{{factors}}" wx:key="{{index}}">
+            <view data-itemid="{{item.name}}" data-itemtag="{{item.tag}}" bindtap='selectStep4' class="step4-list {{item.istrue ? 'step4-active' : ''}}">
+              <text class="step4-txt {{item.istrue ? 'step4-active-txt' : ''}}">{{item.name}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      </block>
+      <block wx:if="{{step == '5'}}">
+      <view class='step4'>
+        <view class='step4-top'>
+          <text class='txt1'>主要护肤需求（至少选2个）：</text>
+        </view>
+        <view class='step4-info'>
+          <block wx:for="{{demands}}" wx:key="{{index}}">
+            <view data-itemid="{{item.name}}" data-itemtag="{{item.tag}}" bindtap='selectStep4' class="step4-list {{item.istrue ? 'step4-active' : ''}}">
+              <text class="step4-txt {{item.istrue ? 'step4-active-txt' : ''}}">{{item.name}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      </block>
+      <block wx:if="{{step == '6'}}">
+      <view class='step4'>
+        <view class='step4-top'>
+          <view class='step4-img'>
+            <text class='txt1'>从何种渠道了解到</text>
+            <image class='k-logo' src='../../images/k-logo.png' mode='widthFix'></image>
+            <text class='txt1'>：</text>
+          </view>
+          <text class='txt1  txtc1'>（至少选2个）</text>
+        </view>
+        <view class='step4-info'>
+          <block wx:for="{{sourceList}}" wx:key="{{index}}">
+            <view data-itemid="{{item.name}}" data-itemtag="{{item.tag}}" bindtap='selectStep4' class="step4-list {{item.istrue ? 'step4-active' : ''}}">
+              <text class="step4-txt {{item.istrue ? 'step4-active-txt' : ''}}">{{item.name}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      </block>
+      <view class='step-num'>
+        <text class='step-num-txt'>{{step}}/6</text>
+      </view>
+    </view>
+    <view class='result-btncontent'>
+      <view class='result-btn' bindtap='changeStep' data-type="0" wx:if="{{step != '1'}}">
+        <text class='result-btn-txt'>上一步</text>
+      </view>
+      <view class='result-btn' bindtap='changeStep' data-type="1">
+        <text class='result-btn-txt'>{{step == 6 ? "提交" : stepTxt}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='result-all'></view> -->
+  <view class='contact' bindtap='changenStatus' style='bottom:30rpx' data-status="{{true}}">
+    <image src='../../images/rule.png' class='contact-img'></image>
+  </view>
+  <rule-modal bind:modalTap="changenStatus" data-status="{{false}}" modal-status="{{modalshow}}" wx:if="{{modalshow}}"></rule-modal>
+</view>
+

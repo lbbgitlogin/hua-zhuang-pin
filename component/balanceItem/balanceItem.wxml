@@ -1,0 +1,38 @@
+<!--component/cartItem/cartItem.wxml-->
+<view class="cart-list {{balanceStatus ? '' : 'cart-list20'}} {{balanceType == '0' ? 'cart-type' : ''}} {{balanceType == '2' ? 'cart-type2' : ''}}" bindtap='goDetails' data-id='{{balanceList.id}}' data-key='{{balanceList.key}}'>
+  <view class="cart-list1 {{!balanceLast && balanceType == '1' ? 'line' : ''}} {{balanceStatus ? '' : 'cart-list34'}}">
+  <view class='cart-list-left'>
+    <view class='cart-pro'>
+      <image class='cart-pro-img' src='{{balanceList.img}}' mode='widthFix'></image>
+    </view>
+  </view>
+  <view class='cart-list-right {{balanceStatus ? "" : "isorder"}}'>
+    <view class='cart-list-top'>
+      <view class='top-left'>
+        <block wx:if="{{balanceType == '0'}}">
+        <text>{{balanceType.product.name}}</text>
+        <text class='top-tit {{balanceList.product.name == "臻采透亮凝水啫喱凝霜：爆水小方" || balanceList.product.name == "臻采透亮洁面啫喱" ? "" : "fontHyb"}}'>{{balanceList.product.name2}}</text>
+        <text class='top-tit {{balanceList.product.name == "臻采透亮凝水啫喱凝霜：爆水小方" || balanceList.product.name == "臻采透亮洁面啫喱" ? "" : "fontHyb"}}' style='margin-bottom: 10rpx;'>{{balanceList.product.name1}}</text>
+        </block>
+        <block wx:else>
+          <text class='top-tit {{balanceList.name == "臻采透亮凝水啫喱凝霜：爆水小方" || balanceList.name == "臻采透亮洁面啫喱" ? "" : "fontHyb"}}'>{{balanceList.name2}}</text>
+          <text class='top-tit {{balanceList.name == "臻采透亮凝水啫喱凝霜：爆水小方" || balanceList.name == "臻采透亮洁面啫喱" ? "" : "fontHyb"}}' style='margin-bottom: 10rpx;'>{{balanceType == "0" ? balanceList.product.name1 : balanceList.name1}}</text>
+        </block>
+        
+        <text class='picker'>{{balanceType == "0" ?  balanceList.stockType ? '规格：'+balanceList.stockType : '' : balanceList.specs.description}}</text>
+      </view>
+      <view class='top-right' wx:if="{{balanceType != '0'}}">
+        <text class='picker {{balanceStatus ? "" : "picker1"}} {{balanceType == "2" ? "picker2" : ""}}' style='font-size:27.78rpx'>x{{balanceList.total}}</text>
+      </view>
+    </view>
+    <view class='cart-bottom'>
+      <view class='cart-change'>
+        
+      </view>
+      <view class='cart-price'>
+        <text class='cart-price-txt'>¥{{balanceType != '1' ? balanceList.price : balanceList.totalprice}}</text>
+      </view>
+    </view>
+  </view>
+  </view>
+</view>

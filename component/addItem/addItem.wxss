@@ -1,0 +1,69 @@
+/* component/addItem/addItem.wxss */
+@import '../../utils/common.wxss';
+.add-item{
+  margin-bottom: 14rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.2);
+  border-radius: 10rpx;
+  background: #fff;
+}
+.add-top{
+  padding: 30rpx;
+  border-bottom: 0.5rpx solid #9d9d9d;
+  position: relative;
+}
+.add-bottom{
+  height: 62rpx;
+  padding: 0 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.left{
+  flex: 1;
+  display:flex;
+align-items:center;
+
+}
+.right{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.top-tit{
+  color: #000000;
+  font-size: 27.78rpx;
+  font-family: 'HYb1gj';
+  /* line-height: 39rpx; */
+}
+.top-txt{
+  color: #847f7f;
+  font-size: 27.78rpx;
+  font-family: 'HYb1gj';
+  /* line-height: 39rpx; */
+}
+.add-selected{
+  color: #cf0202;
+  font-size: 27.78rpx;
+  font-family: 'HYb1gj';
+}
+.right-list{
+  padding: 0 30rpx;
+  display:flex;
+  align-items:center;
+}
+.select-icon{
+  width: 72rpx;
+  height: 60rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.select-icon-img{
+  width: 100%;
+  height: 100%;
+}
+.top-txt-content{
+  display: flex;
+}
+

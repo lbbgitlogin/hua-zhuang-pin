@@ -1,0 +1,11 @@
+<!--pages/details-more/index.wxml-->
+<view class='container'>
+  <block wx:if="{{list.length > 0}}">
+    <image class='pro-img' mode='widthFix' wx:for="{{list}}" wx:key="{{index}}" src='{{item}}'></image>
+  </block>
+  <block wx:else>
+    <view id='no-more' wx:if="{{!isMore}}">
+      <text class='empty-txt'>暂无详情～</text>
+    </view>
+  </block>
+</view>

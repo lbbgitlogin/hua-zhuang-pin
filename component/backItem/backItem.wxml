@@ -1,0 +1,13 @@
+<!--component/backItem/backItem.wxml-->
+<view class='back-item'>
+  <view class='back-icon' bindtap='goback'></view>
+  <view class='content'>
+    <view>快递单号:{{itemNum}}
+      <text data-num="{{itemNum}}" catchtap='copy' class='copy'>复制</text> </view>
+    <view>快递公司：{{itemName}}</view>
+  </view>
+  <view>
+    <text class='back-txt'>{{itemTxt}}</text>
+    <image src='../../images/logis.png' class='back-img'></image>
+  </view>
+</view>

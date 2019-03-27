@@ -1,0 +1,48 @@
+/* component/backItem/backItem.wxss */
+@import '../../utils/common.wxss';
+.back-item{
+  display: flex;
+  flex-direction: row;
+  background: #ffffff;
+  box-shadow: 0rpx 0rpx 20rpx rgba(0,0,0,0.2);
+  height: 120rpx;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rpx 25rpx;
+  margin-bottom: 50rpx;
+  position: relative;
+  border-radius: 0 0 10rpx 10rpx; 
+}
+.content{
+  position: absolute;
+  font-size: 20rpx;
+  color: #858585;
+  left: 65rpx;
+  top: 30rpx;
+}
+.content view{
+  height: 40rpx;
+  position: relative;
+}
+.copy{
+  font-size: 20rpx;
+  display: inline-block;
+  margin-left: 20rpx;
+  border-radius: 30rpx;
+  color: #858585;
+  border: 1rpx solid #ccc;
+  padding: 2rpx 14rpx;
+
+}
+.back-img{
+  width: 51rpx;
+  height: 61rpx;
+  margin-left: 20rpx;
+  background: none;
+}
+.back-txt{
+  color: #000000;
+  font-size: 27.78rpx;
+  margin-left: 14rpx;
+  font-family: 'HYg2gj';
+}

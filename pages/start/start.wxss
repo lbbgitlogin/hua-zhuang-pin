@@ -1,0 +1,85 @@
+/* pages/start/start.wxss */
+/* 启动页图片 */
+.start-page{
+  width: 100%;
+  height: 100%;
+  /* background-image: url('https://statics.maiscrm.com/k-bright/images/comein.jpg');
+  background-size: 100% 100%; */
+}
+/* 授权页面 */
+.start-page1{
+  width: 100%;
+  height: 100%;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/login-bg.jpg');
+  background-size: cover;
+  /* overflow:hidden; */
+
+}
+.step2Img{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.start-content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+}
+.start-icon{
+  -webkit-animation: arrowGo 1s infinite linear;
+  -moz-animation: arrowGo 1s infinite linear;
+  -o-animation: arrowGo 1s infinite linear;
+  animation: arrowGo 1s infinite linear;
+  position: absolute;
+  bottom: 40rpx;
+  left: 50%;
+  margin-left: -32rpx;
+}
+.login-info{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 100rpx;
+  left: 0;
+}
+.info-txt{
+  color: #847f7f;
+  font-size: 32rpx;
+  line-height: 50rpx;
+}
+.login-btn{
+  background: #847f7f;
+  border-color: #847f7f;
+  color: #fff;
+  font-size: 30rpx;
+  margin-top: 30rpx; 
+}
+
+@-webkit-keyframes arrowGo {
+    0%{
+      bottom: 40rpx;
+    }
+    50%{
+      bottom: 25rpx;
+    }
+    100%{
+      bottom: 10rpx;
+    }
+}
+@keyframes arrowGo {
+    0%{
+      bottom: 40rpx;
+    }
+    50%{
+      bottom: 25rpx;
+    }
+    100%{
+      bottom: 10rpx;
+    }
+}

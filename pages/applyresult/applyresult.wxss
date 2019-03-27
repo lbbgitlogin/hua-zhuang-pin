@@ -1,0 +1,349 @@
+/* pages/applyresult/applyresult.wxss */
+.result-all{
+  padding-bottom: 60rpx;
+}
+.result-img{
+  width: 100%;
+}
+.sharecontent{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  /* background: rgba(0,0,0,0.75); */
+}
+.share{
+  width: 100%;
+  background: none;
+}
+.close-video-icon{
+  width: 40rpx;
+  height: 40rpx;
+  position: fixed;
+  top: 30rpx;
+  left: 30rpx;
+  background: none;
+  z-index: 12;
+}
+.result-btn-content{
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 35rpx;
+}
+.result-top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30rpx;
+}
+.result-top-tit{
+  color: #847f7f;
+  font-size: 27.78rpx;
+  margin-bottom: 15rpx;
+}
+.result-top-img{
+  width: 450rpx;
+  height: 1rpx;
+}
+.result-imgcontent{
+  position: relative;
+}
+.result-imgcontent1{
+  /* height: 790rpx; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result-transparent{
+  background: rgba(249,250,250,0.55);
+  height: 268rpx;
+  border-bottom: 2rpx solid #b7b5bb;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.result-tit{
+  margin-top: 23rpx;
+  color: #595b5d;
+  font-size: 38.89rpx;
+  margin-bottom: 12rpx;
+  line-height: 46rpx;
+  font-family: 'HYb2gj';
+  font-weight: 500;
+  text-align: center;
+}
+.result-txt{
+  color: #847f7f;
+  font-size: 27.78rpx;
+  line-height: 48rpx;
+  text-align: center;
+  font-family: 'HYb1gj';
+}
+.ff{
+  font-family: 'HYg2gj';
+}
+.ff1{
+  font-family: 'HYb1gj';
+  font-size: 25.78rpx;
+}
+.ff2{
+  font-family: 'HYa1gj';
+}
+.line-view{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.k-logo{
+  width: 111rpx;
+  height: 18rpx;
+  margin: 0 10rpx;
+  background: none;
+  margin-top: -4rpx;
+}
+.k-lock{
+  width: 146rpx;
+  height: 19rpx;
+  margin: 0 10rpx;
+  background: none;
+  margin-top: -4rpx;
+}
+.result-info-tit{
+  color: #847f7f;
+  font-size: 40rpx;
+  margin-bottom: 30rpx;
+  line-height: 46rpx;
+  font-family: 'HYg2gj';
+}
+.result-content{
+  padding: 0 40rpx;
+  background: url('https://statics.maiscrm.com/k-bright/images/bg3.jpg') no-repeat;
+  background-size: 100% 100%;
+}
+.result-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  margin-top: -132rpx;
+  padding: 50rpx 30rpx 0rpx;
+  position: relative;
+  z-index: 1;
+  height: 336rpx;
+}
+.result-info1{
+  padding: 40rpx 0rpx 20rpx;
+  display: block;
+  
+}
+.result-btn{
+  width: 327rpx;
+  height: 61rpx;
+  background: #847f7f;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50rpx;
+}
+.result-btn-txt{
+  color: #ffffff;
+  font-size: 34.94rpx;
+  font-family: 'HYg2gj';
+}
+.right-tip{
+  padding: 20rpx 0rpx 12rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-right:-27rpx;
+}
+.right-tip-t{
+  color: #847f7f;
+  font-size: 16.67rpx;
+  font-family: 'HYg2gj';
+  
+}
+.scroll-h{
+  /* padding: 0rpx 170rpx; */
+}
+.list{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0rpx 170rpx;
+  margin-bottom: 12rpx;
+}
+.list-l{
+  flex: 1;
+}
+.list-r{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.list-t{
+  color: #847f7f;
+  font-size: 27.78rpx;
+  font-family: 'HYg2gj';
+}
+.list-img{
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.video-dailog{
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.66);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+.video-content{
+  position: relative;
+  padding: 0rpx 50rpx;
+  display: flex;
+  width: 100%;
+}
+.video-close{
+  position: absolute;
+  top: -70rpx;
+  right: 30rpx;
+}
+.video-info{
+  background: #fff;
+  width: 100%;
+  display: flex;
+  border-radius: 10rpx;
+  padding: 40rpx;
+  flex-direction: column;
+  align-items: center;
+
+}
+.v-t{
+  color: #666;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+.no-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.right-tip-c{
+  position: relative;
+  display:flex;
+}
+.xing{
+  font-size: 16.66rpx;
+  color:#847f7f;
+  position: absolute;
+  top: -5rpx;
+  left: -10rpx;
+}
+.huo{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.huo-start{
+  font-size: 16.66rpx;
+  color:#847f7f;
+  position: absolute;
+  top: 0rpx;
+  right: 5rpx;
+}
+/* 授权页面 */
+.start-page1{
+  width: 100%;
+  height: 100%;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/login-bg.jpg?versio=2');
+  background-size: cover;
+  /* overflow:hidden; */
+
+}
+.start-page2{
+  background-image: url('https://statics.maiscrm.com/k-bright/images/login1.jpg?versio=2');
+  background-size: cover;
+}
+.step2Img{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.start-content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+}
+.start-icon{
+  /* -webkit-animation: arrowGo 1s infinite linear;
+  -moz-animation: arrowGo 1s infinite linear;
+  -o-animation: arrowGo 1s infinite linear;
+  animation: arrowGo 1s infinite linear; */
+  /* position: absolute;
+  bottom: 40rpx;
+  left: 50%;
+  margin-left: -32rpx; */
+}
+.login-info{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 200rpx;
+  left: 0;
+}
+.login-info1{
+  bottom: 80rpx;
+}
+.info-txt{
+  color: #847f7f;
+  font-size: 31.3rpx;
+  line-height: 50rpx;
+  font-family: 'HYb2gj';
+}
+.login-btn{
+  background: #847f7f;
+  border-color: #847f7f;
+  color: #fff;
+  font-size: 36.5rpx;
+  margin-top: 40rpx; 
+  width: 343rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  font-family: 'HYb1gj';
+}
+.login-view{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

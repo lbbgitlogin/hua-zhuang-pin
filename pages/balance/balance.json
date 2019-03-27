@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "结算商品",
+  "usingComponents": {
+    "balance-item": "/component/balanceItem/balanceItem",
+    "select-add": "/component/selectAdd/selectAdd"
+  }
+}

@@ -1,0 +1,166 @@
+/* pages/question/question.wxss */
+.result-all{
+  padding-bottom: 100rpx;
+}
+.result-img{
+  width: 100%;
+}
+.result-imgcontent{
+  position: relative;
+}
+.result-tit{
+  margin-top: 40rpx;
+  color: #595b5d;
+  font-size: 40rpx;
+  margin-bottom: 10rpx;
+}
+.result-txt{
+  color: #847f7f;
+  font-size: 30rpx;
+  line-height: 48rpx;
+}
+.result-info-tit{
+  color: #847f7f;
+  font-size: 40rpx;
+  margin-bottom: 30rpx;
+}
+.result-content{
+  padding: 0 40rpx;
+  /* padding-bottom: 100rpx;  */
+  background: url('https://statics.maiscrm.com/k-bright/images/bg3.jpg') no-repeat;
+  background-size: 100% 100%;
+  padding-bottom:26rpx;
+  /* background: #f9fafa; */
+}
+.result-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f9fafa;
+  margin-top: -219rpx;
+  padding: 0rpx 80rpx;
+  position: relative;
+  z-index: 1;
+  height: 560rpx;
+}
+.result-btncontent{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* padding: 20rpx; */
+}
+.result-btn{
+  width: 222rpx;
+  height: 60rpx;
+  background: #847f7f;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30rpx 10rpx 0;
+}
+.result-btn-txt{
+  color: #ffffff;
+  font-size: 27.78rpx;
+  font-family: 'HYb1gj';
+}
+.step-num-txt{
+  color: #847f7f;
+  font-size: 22.22rpx;
+  font-family: 'HYg2gj';
+}
+.step-num{
+  position: absolute;
+  bottom: 10rpx;
+  left: 20rpx;
+}
+.txt1{
+  color: #847f7f;
+  font-size: 35.95rpx;
+  line-height:46rpx;
+  font-family: 'HYb1gj';
+  
+}
+.txtc{
+  text-align: center;
+}
+.txtc1{
+  font-size: 32.29rpx;
+}
+/* 第一步 */
+.step1{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 37rpx;
+}
+.step1-left{
+  flex: 1;
+  /* justify-content: flex-end; */
+  display: flex;
+}
+.step1-right{
+  flex: 2;
+}
+.input-style{
+  border-bottom: 1rpx solid #847f7f;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 22.22rpx;
+}
+/* 第四步 */
+.step4{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.step4-top{
+  display: flex;
+  /* align-items: flex-start; */
+  margin-bottom: 30rpx;
+  flex-direction: column;
+}
+.step4-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.step4-list{
+  width: 287rpx;
+  height: 46rpx;
+  border: 1px solid #847f7f;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30rpx;
+  background:#fff;
+}
+.step4-active{
+  background: #847f7f;
+}
+
+.step4-txt{
+  color: #847f7f;
+  font-size: 22.22rpx;
+  font-family: 'HYg2gj';
+}
+.step4-active-txt{
+  color: #fff;
+}
+.step4-img{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.k-logo{
+  width: 130rpx;
+  height: 18rpx;
+  margin: 0 10rpx;
+  background: none;
+  /* margin-top: -4rpx; */
+}

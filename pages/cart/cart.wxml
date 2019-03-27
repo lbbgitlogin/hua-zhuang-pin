@@ -1,0 +1,52 @@
+<!--pages/cart/cart.wxml-->
+<view class="container cart-all">
+  <image id='bgmodule' mode="widthFix" src='https://statics.maiscrm.com/k-bright/images/bg.png'></image>
+  <view class='cart-content'>
+    <block wx:if="{{list.length > 0}}">
+    <view class='cart-container'>
+        <cart-item wx:for="{{list}}" wx:key="{{index}}" cart-index="{{index}}" cart-list="{{item}}" bind:chageStep="chageStep" cart-len="{{list.length}}"></cart-item>
+    </view>
+    </block>
+    <block wx:else>
+        <view class='empty-item'>
+          <image class='no-cart' src='../../images/no-cart.png' mode='widthFix'></image>
+          <text class='empty-txt'>购物车暂无商品，去添加点什么吧~</text>
+        </view>
+      </block>
+  </view>
+  <view class='cart-bottom' wx:if="{{list.length > 0}}">
+    <view class='cart-bottom-list cart-bottom-list1' style='padding-left:30rpx;'>
+      <view class='no-select {{isAll ? "cart-select-icon" : ""}}' bindtap='selectAll'></view>
+      <text class='cart-select-txt'>全选</text>
+    </view>
+    <view class='cart-bottom-list cart-bottom-list2'>
+      <text class='cart-all-txt'>合计：</text>
+      <text class='cart-price' wx:if="{{totalPrice != '0.00'}}">¥{{totalPrice}}</text>
+      <text class='cart-price' wx:if="{{totalPrice == '0.00'}}">未选择商品</text>
+    </view>
+    <view class='cart-bottom-list'>
+      <view class='cart-end' bindtap='goBalance'>
+        <text class='cart-end-txt'>去结算</text>
+      </view>
+    </view>
+  </view>
+  <view class="dialog-mask " style="z-index:11;visibility:{{addressMenuIsShow ? 'visible': 'hidden'}}" bindtap="hideCitySelected" >
+    <view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+    <view class='top-content'>
+      <view class='top-content-list'>
+      <text catchtap="cityCancel" class='cancel'>取消</text>
+      </view>
+      <view class='top-content-list' style='justify-content:flex-end;display:flex;'>
+      <text class='cancel' catchtap="citySure">确定</text>
+      </view>
+    </view>
+    <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}" wx:key="">
+      <picker-view-column wx:for="{{specList}}" wx:for-index="idx" wx:key="{{idx}}"wx:for-item="itemName">
+        <view wx:for="{{itemName}}" wx:key="index" class="picker-item">
+          <text class="picker-item-txt">{{item.name}}</text>
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+  </view>
+</view>

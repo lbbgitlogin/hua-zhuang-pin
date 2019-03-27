@@ -1,0 +1,50 @@
+/* component/searchTop/searchTop.wxss */
+@import '../../utils/common.wxss';
+.search-top{
+  display: flex;
+  flex-direction: row;
+  background: #ffffff;
+  box-shadow: 0rpx 0rpx 20rpx rgba(0,0,0,0.2);
+  height: 80rpx;
+  align-items: center;
+  padding: 0 30rpx;
+  padding-right: 90rpx;
+  margin-bottom: 35rpx;
+  border-radius: 0 0 10rpx 10rpx; 
+  position: relative;
+}
+.search-top2{
+  padding-right: 30rpx;
+  padding-left: 65rpx;
+}
+.search-top1{
+  margin-bottom: 0rpx;
+}
+.input-placeholder{
+  color: #dedede;
+  font-size: 30rpx;
+}
+.search-right{
+  position: absolute;
+  top: 50%;
+  margin-top: -18.5rpx;
+  right: 30rpx;
+}
+.input-style{
+  font-size: 27.78rpx;
+}
+.search-icon1{
+  width: 34rpx;
+  height: 35rpx;
+  background: none;
+}
+.search-right1{
+  position: absolute;
+  top: 50%;
+  margin-top: -17.5rpx;
+  left: 16rpx;
+}
+.input-style1{
+  /* font-size: 22.22rpx; */
+  /* border-bottom: 1rpx solid #d2d4d6; */
+}

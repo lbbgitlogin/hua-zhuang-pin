@@ -1,0 +1,61 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/applyresult/applyresult",
+    "pages/newaddress/newaddress",
+    "pages/apply/apply",
+    "pages/logistics/logistics",
+    "pages/orderdetails/orderdetails",
+    "pages/details-more/index",
+    "pages/user/user",
+    "pages/question/question",
+    "pages/product/product",
+    "pages/details/details",
+    "pages/balance/balance",
+    "pages/cart/cart",
+    "pages/start/start",
+    "pages/search/search",
+    "pages/address/address"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#050505",
+    "navigationBarTitleText": "科倍丽K-BRIGHT官方商城",
+    "navigationBarTextStyle":"white"
+  },
+  "networkTimeout": {
+    "request": 15000,
+    "downloadFile": 10000
+  },
+  "tabBar": {
+    "color": "#8c8c8c",
+    "selectedColor": "#fff",
+    "backgroundColor": "#050505",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "品牌首页",
+        "iconPath": "/images/icon-home.png",
+        "selectedIconPath": "/images/icon-home-active.png"
+      },
+      {
+        "pagePath": "pages/product/product",
+        "text": "全部产品",
+        "iconPath": "/images/icon-pro.png",
+        "selectedIconPath": "/images/icon-pro-active.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "/images/icon-car.png",
+        "selectedIconPath": "/images/icon-car-active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "/images/icon-user.png",
+        "selectedIconPath": "/images/icon-user-active.png"
+      }
+    ]
+  }
+}

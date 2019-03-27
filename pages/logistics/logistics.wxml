@@ -1,0 +1,39 @@
+<!--pages/logistics/logistics.wxml-->
+<view class='container logistics-all'>
+  <image id='bgmodule' mode="widthFix" src='https://statics.maiscrm.com/k-bright/images/bg2.jpg'></image>
+  <back-item item-txt="{{topTxt}}" item-num='{{number}}' item-name='{{name}}'></back-item>
+  <view class='log-content'>
+    <block wx:if="{{list.length > 0}}">
+    <view class='log-item'>
+      <view class='refresh' bindtap='getData'></view>
+      <view class='log-list' wx:for="{{list}}" wx:key="{{index}}">
+        <view class='log-left'>
+          <text class='log-tit {{index == 0 ? "log-active-txt" : ""}}'>{{item.Mtime}}</text>
+          <text class='log-txt'>{{item.Dtime}}</text>
+        </view>
+        <view class='log-right'>
+          <view class='log-icon {{index == 0 ? "log-icon-active" : ""}}'></view>
+          <text class='log-right-txt {{index == 0 ? "log-active-txt" : ""}}'>{{item.context}}</text>
+        </view>
+      </view>
+      <view class='log-list log-list-last'>
+        <view class='log-left'>
+          
+        </view>
+        <view class='log-right'>
+          
+        </view>
+      </view>
+    </view>
+    </block>
+    <block wx:else>
+      <view id='no-more' style='padding-bottom:80rpx'>
+        <text class='empty-txt'>暂无物流信息</text>
+      </view>
+    </block>
+  </view>
+  <view class='contact' style='bottom:30rpx;'>
+    <image src='../../images/contact.png' class='contact-img'></image>
+    <button open-type="contact" class='contact-btn'>客服</button>
+  </view>
+</view>

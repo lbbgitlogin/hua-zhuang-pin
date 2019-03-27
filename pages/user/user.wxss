@@ -1,0 +1,204 @@
+/* pages/user/user.wxss */
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 60rpx 0 0rpx; */
+  margin-top: 40rpx;
+  position: relative;
+}
+.info-txtcontent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0 63rpx;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin-bottom: 30rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #595b5d;
+  font-size: 33.33rpx;
+  font-family: 'HYg2gj';
+}
+.tab-content{
+  padding: 0 50rpx;
+  background: '#fff';
+  display: flex;
+  flex-direction: column;
+}
+.tab-nav{
+  border: 2rpx solid #595b5d;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 74rpx;
+  margin-bottom: 40rpx;
+}
+.tab-nav-list{
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+.tab-nav-bottom{
+  position: absolute;
+  top:-8rpx;
+  left: 50%;
+  margin-left: -100rpx;
+  width: 200rpx;
+  height: 8rpx;
+  background: #2f373d;
+}
+.nav{
+  justify-content: center;
+  align-items:center;
+  height: 100%;
+  display: flex;
+}
+.tab-nav-txt{
+  color: #595b5d;
+  font-size: 27.78rpx;
+  font-family: 'HYb1gj';
+}
+.nav-active{
+  background: #827f80;
+}
+.nav-active-txt{
+  color: #fff;
+}
+
+.boxF, .boxS, .boxT, .overlay
+{
+    width: 144rpx;
+    height: 170rpx;
+    overflow: hidden;
+}
+.boxF, .boxS
+{
+    visibility: hidden;
+}
+.boxF
+{
+    transform: rotate(120deg);
+    float: left;
+    /* margin-left: 10px; */
+    -ms-transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    -webkit-transform: rotate(120deg);
+}
+.boxS
+{
+    transform: rotate(-60deg);
+    -ms-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+}
+.boxT
+{
+    transform: rotate(-60deg);
+    background: no-repeat 50% center;
+    background-size: 125% auto;
+    -ms-transform: rotate(-60deg);
+    -moz-transform: rotate(-60deg);
+    -webkit-transform: rotate(-60deg);
+    visibility: visible;
+}
+.head-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 授权页面 */
+.start-page1{
+  width: 100%;
+  height: 100%;
+  background-image: url('https://statics.maiscrm.com/k-bright/images/login-bg.jpg?versio=2');
+  background-size: cover;
+  overflow:hidden;
+
+}
+.start-page2{
+  background-image: url('https://statics.maiscrm.com/k-bright/images/login1.jpg?versio=2');
+  background-size: cover;
+}
+.step2Img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.start-content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+}
+.start-icon{
+  -webkit-animation: arrowGo 1s infinite linear;
+  -moz-animation: arrowGo 1s infinite linear;
+  -o-animation: arrowGo 1s infinite linear;
+  animation: arrowGo 1s infinite linear;
+  position: absolute;
+  bottom: 40rpx;
+  left: 50%;
+  margin-left: -32rpx;
+}
+.login-info{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 200rpx;
+  left: 0;
+}
+.login-info1{
+  bottom: 80rpx;
+}
+.info-txt{
+  color: #847f7f;
+  font-size: 31.3rpx;
+  line-height: 50rpx;
+  font-family: 'HYb2gj';
+}
+.login-btn{
+  background: #847f7f;
+  border-color: #847f7f;
+  color: #fff;
+  font-size: 36.35rpx;
+  margin-top: 40rpx; 
+  width: 341rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  font-family: 'HYb1gj';
+}
+.login-view{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.k-logo{
+  width: 135rpx;
+  height: 18rpx;
+  margin: 0 10rpx;
+  background: none;
+  /* margin-top: -4rpx; */
+}

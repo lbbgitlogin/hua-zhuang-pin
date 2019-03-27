@@ -1,0 +1,64 @@
+<!--component/orderItem/orderItem.wxml-->
+<navigator url='/pages/orderdetails/orderdetails?id={{itemObj.id}}' class='order'>
+<view class='sw-v'>
+  <swiper 
+    style="height:{{imgheights[current]}}rpx;position:relative"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current='{{current}}' bindchange="bindchange">
+    <block wx:for="{{itemObj.goods}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item.img}}" data-id='{{index}}' class="pro-img" mode="widthFix" bindload="imageLoad"/>
+      </swiper-item>
+    </block>
+    
+  </swiper>
+  <view class='dot-icon' wx:if="{{itemObj.goods.length > 1}}">
+       <view wx:for="{{itemObj.goods}}" wx:key="{{index}}" class='dot-default {{current == index ? "dot-active1" : ""}}'></view>   
+    </view>
+  </view>
+  <view class='content'>
+    <view class='top'>
+      <view class='list'>
+        <text class='txt'>订单号：{{itemObj.number}}</text>
+      </view>
+      <view class='list list1'>
+        <!-- unpaid: 待支付
+canceled: 订单失效
+paid: 已支付待发货
+delivered: 已发货
+deliver_failed: 发货失败
+completed: 已完成 -->
+        <text class='txt' style='margin-right:10rpx;' >{{itemObj.status == 'unpaid' ? "待支付" : itemObj.status == 'canceled' ? "已取消" : itemObj.status == 'paid' ? "待发货" : itemObj.status == 'delivered' ? "已发货" : itemObj.status == 'deliver_failed' ? "发货失败" : "已完成"}}</text>
+        <view class='right-icon1'></view>
+      </view>
+    </view>
+    <view class='info'>
+      <view class='txt-content' wx:for="{{itemObj.goods}}" wx:key="{{index}}">
+        <view class='txt-content-l txt-content-l1'>
+          <text class='tit {{item.name == "臻采透亮凝水啫喱凝霜：爆水小方" || item.name == "臻采透亮洁面啫喱" ? "" : "fontHyb"}}'>{{item.name}}</text>
+        </view>
+        <view class='txt-content-l txt-content-l2'>
+        <text class='tit1'>{{item.specs.description}} x{{item.total}}</text>
+        </view>
+      </view>
+      <view class='wuliu'>
+        <block wx:if="{{itemObj.status == 'unpaid'}}">
+          <view class='btn' catchtap='payNow' data-id='{{itemObj.id}}'>
+            <text class='btn-txt'>现在支付</text>
+          </view>
+        </block>
+        <block wx:else>
+        <!-- <navigator class='btn' url='/pages/logistics/logistics?number={{itemObj.shipment.number}}&con={{itemObj.shipment.expCom}}&name={{itemObj.shipment.expName}}' wx:if="{{itemObj.status == 'delivered'}}">
+          <text class='btn-txt'>物流查询</text>
+        </navigator> -->
+        <view class='btn' catchtap='confirmOrder' wx:if="{{itemObj.status == 'delivered'}}" data-id='{{itemObj.id}}'>
+          <text class='btn-txt'>确认收货</text>
+        </view>
+        <view class='btn' catchtap='goLogis' wx:if="{{itemObj.status == 'delivered' || itemObj.status == 'completed'}}" data-id='{{itemObj.id}}'>
+          <text class='btn-txt'>物流查询</text>
+        </view>
+        
+        </block>
+      </view>
+    </view>
+  </view>
+</navigator>

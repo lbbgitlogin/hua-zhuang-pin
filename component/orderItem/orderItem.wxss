@@ -1,0 +1,100 @@
+/* component/orderItem/orderItem.wxss */
+@import '../../utils/common.wxss';
+.order{
+  border: 2rpx solid #858585;
+  border-radius: 8rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 0 20rpx rgba(0,0,0,0.2);
+  /* background: #fff; */
+}
+.sw-v{
+  position: relative;
+}
+.pro-img{
+  width: 100%;
+}
+.top{
+  padding: 0 10rpx;
+  height: 46rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1rpx solid #959191;
+}
+.txt{
+  font-size: 22.22rpx;
+  color: #000000;
+  font-family: 'HYg2gj';
+}
+.list{
+  flex: 2;
+  display: flex;
+  align-items: center;
+}
+.list1{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.info{
+  padding-top: 45rpx;
+}
+.txt-content{
+  border-left: 5rpx solid #858585;
+  padding: 5rpx 10rpx 5rpx 23rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.txt-content-l{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.txt-content-l1{
+  flex: 3
+}
+.txt-content-l2{
+  flex: 1
+}
+.tit{
+  color: #2f373d;
+  font-size: 27.72rpx;
+  line-height:40rpx;
+  font-family: 'HYg2gj';
+  /* font-family: Arial */
+}
+.fontHyb{
+  font-family: 'HYg2gj';
+}
+.tit1{
+  color: #8a8b8c;
+  font-size: 22.22rpx;
+  /* margin-left: 35rpx; */
+  line-height:36rpx;
+  font-family: 'HYg2gj';
+}
+.wuliu{
+  display: flex;
+  padding: 20rpx;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.btn{
+  width: 186rpx;
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #8c8c8c;
+  border-radius: 8rpx;
+  margin-left: 30rpx
+}
+.btn-txt{
+  color: #000000;
+  font-size: 22.22rpx;
+  font-family: 'HYg2gj';
+}

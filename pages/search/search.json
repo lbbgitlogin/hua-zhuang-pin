@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "搜索结果",
+  "usingComponents": {
+    "hot-item": "/component/hotItem/hotItem",
+    "search-top": "/component/searchTop/searchTop",
+    "balance-item": "/component/balanceItem/balanceItem"
+  }
+}

@@ -1,0 +1,23 @@
+<!--component/selectAdd/selectAdd.wxml-->
+<view class='add-content {{selectShadow ? "" : "no-shadow"}} {{isBottom ? "" : "mg35"}}' bindtap='changeAdd'>
+  <view class='add-content-left'>
+    <view class='add-icon'></view>
+    <block wx:if="{{selectObj.id}}">
+    <view class='add-left-info' >
+      <view class='add-tit-content' >
+        <text class='add-tit' style='margin-right:20rpx;'>{{selectObj.name}}</text>
+        <text class='add-tit'>{{selectObj.phone}}</text>
+      </view>
+      <text class='add-txt'>{{selectObj.province+selectObj.city+selectObj.district+selectObj.detail}}</text>
+    </view>
+    </block>
+    <block wx:else>
+      <view class='add-left-info' >
+      <text class='add-txt'>暂无地址，请先添加地址!</text>
+    </view>
+    </block>
+  </view>
+  <view class='add-content-right' wx:if="{{selectType == '1'}}">
+    <view class='right-icon'></view>
+  </view>
+</view>

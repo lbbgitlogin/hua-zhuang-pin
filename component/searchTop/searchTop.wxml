@@ -1,0 +1,6 @@
+<!--component/searchTop/searchTop.wxml-->
+<view class='search-top {{isBottom ? "search-top2" : "search-top1"}}'>
+  <input name="search" id="search" class='input-style {{isBottom ? "input-style1" : ""}}' bindinput="bindKeyInput" placeholder="搜索产品" placeholder-style="color:#cbcaca;font-size:27.22rpx;" value='{{searchTxt}}' bindconfirm="search" />
+  <view wx:if="{{!isBottom}}" class='search-icon search-right {{isBottom ? "search-icon1" : ""}}' bindtap='search'></view>
+  <image wx:if="{{isBottom}}" class='search-icon1 search-right1' src='../../images/serch-icon.png' bindtap='search'></image>
+</view>

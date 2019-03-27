@@ -1,0 +1,137 @@
+/* pages/newaddress/newaddress.wxss */
+.new-add{
+  padding: 0 20rpx;
+}
+.input-content{
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 10rpx 10rpx;
+  background: #fff;
+}
+.input-list{
+  border-bottom: 1rpx solid #dedede;
+  display: flex;
+  flex-direction: row;
+  padding: 0 30rpx;
+  height: 72rpx;
+  align-items: center;
+}
+.input-style{
+  font-size: 27.28rpx;
+}
+.list-left{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.list-right{
+  flex: 2;
+  position: relative;
+}
+.left-txt{
+  color: #000000;
+  font-size: 27.28rpx;
+  font-family: 'HYg2gj';
+}
+
+.picker-view {
+  width: 100%;
+  display: flex;
+  z-index:12;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 550rpx;
+}
+ 
+.picker-item {
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center;
+}
+.top-content{
+  border-top: 1rpx solid #dedede;
+  border-bottom: 1rpx solid #dedede;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row; 
+  width: 100%;
+  align-items: center;
+  
+}
+.top-content-list{
+  flex: 1;
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  /* padding: 0 30rpx 20rpx 0; */
+}
+.cancel{
+  color: #000;
+  font-size: 32rpx;
+}
+.dialog-mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.input-placeholder{
+  color: #dedede;
+  font-size: 27.78rpx;
+}
+.setDefault{
+  margin-top: 16rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.2);
+  border-radius: 10rpx;
+  background: #fff;
+  padding:0 20rpx 0 30rpx;
+  height: 70rpx;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 66rpx;
+}
+.setDefault-left{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.setDefault-right{
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.sub-view{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+
+}
+.sub-btn{
+  padding: 0;
+  margin: 0;
+  width:340rpx;
+  height: 64rpx;
+  line-height: 62rpx;
+  display: flex;justify-content: center;
+  align-items: center;
+  border: 1rpx solid #595b5d;
+  border-radius: 10rpx;
+}
+.btn-txt{
+  color: #595b5d;
+  font-size: 27.78rpx;
+  font-family: 'HYg2gj';
+  display: inline-block;
+  /* width:100rpx; */
+  text-align:center;
+}
+

@@ -1,0 +1,24 @@
+<!--component/ruleModal/ruleModal.wxml-->
+<view class='modal-container' wx:if="{{modalStatus}}">
+  <view class='modal-content'>
+    <view class='modal-close-icon modal-close' bindtap='changeStatus'></view>
+    <view class='modal-top'>
+      <view class='line-hot line-left '>
+        <image src='../../images/line-left.png' class='line-hot-icon'></image>
+      </view>
+      <view class='line-hot line-right'>
+        <image src='../../images/line-right.png' class='line-hot-icon'></image>
+      </view>
+      <text class='hot-txt'>活动规则</text>
+    </view>
+    <view class='modal-center'>
+      <text class='hot-tit'>1. 本次活动为正装申领，每位参与者仅限申领一次。</text>
+      <text class='hot-tit'>2. 申请流程：</text>
+      <text class='hot-tit'>a. 填写护肤品使用问卷参与申领</text>
+      <text class='hot-tit'>b. 申领提交后即有机会赢取产品正装</text>
+      <text class='hot-tit'>c. 中奖用户将于活动结束后一天通过微信后台通知</text>
+      <text class='hot-tit'>3. 中奖名单将于后台随机抽取，奖品将于开奖日起一周内寄出</text>
+      <!-- <text class='hot-tit'>4. 本活动最终解释权归科倍丽所有</text> -->
+    </view>
+  </view>
+</view>

@@ -1,0 +1,34 @@
+<!--component/addItem/addItem.wxml-->
+<view class='add-item' >
+  <view class='add-top' bindtap='addSub' data-id="{{addList.id}}">
+    <view class='select-icon'>
+      <image wx:if="{{addList.isDefault}}"src='../../images/selected.png' class='select-icon-img'></image>
+    </view>
+    <view class='top-txt-content'>
+      <text class='top-tit' style='margin-right:20rpx;'>{{addList.name}}</text>
+      <text class='top-tit'>{{addList.phone}}</text>
+    </view>
+    <text class='top-txt'>{{addList.province+addList.city+addList.district+addList.detail}}</text>
+  </view>
+  <view class='add-bottom'>
+    <block wx:if="{{addList.isDefault}}">
+    <view class='left'>
+      <text class='add-selected'>默认</text>
+    </view>
+    </block>
+    <block wx:else>
+      <view class='left' bindtap='setDefault' data-type="0" data-id="{{addList.id}}">
+        <view class='no-select'></view>
+      </view>
+    </block>
+    <view class='right'>
+      <view class='right-list'>
+        <navigator class='edit' url="/pages/newaddress/newaddress?id={{addList.id}}"></navigator>
+        <!-- <view class='edit'></view> -->
+      </view>
+      <view class='right-list ' style='padding-right:0' >
+        <view class='del' bindtap='setDefault' data-type="1" data-id="{{addList.id}}"></view>
+      </view>
+    </view>
+  </view>
+</view>

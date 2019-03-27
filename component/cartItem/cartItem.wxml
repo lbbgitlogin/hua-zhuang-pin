@@ -1,0 +1,45 @@
+<!--component/cartItem/cartItem.wxml-->
+<view class="cart-list ">
+  <view class="cart-list1 {{cartIndex != (cartLen-1) ? 'line' : ''}}">
+  <view class='cart-list-left'>
+    <view class='cart-select' bindtap='chageStep' data-type="2" data-id='{{cartList.id}}'>
+      <view class='no-select {{cartList.isChecked ? "cart-select-icon" : ""}}'></view>
+    </view>
+    <view class='cart-pro'>
+      <image class='cart-pro-img' src='{{cartList.goods.img}}' mode='widthFix'></image>
+    </view>
+  </view>
+  <view class='cart-list-right'>
+    <view class='cart-list-top'>
+      <view class='top-left'>
+        <text class='top-tit {{cartList.goods.name == "臻采透亮凝水啫喱凝霜：爆水小方" || cartList.goods.name == "臻采透亮洁面啫喱" ? "" : "fontHyb"}}'>{{cartList.goods.name2}}</text>
+        <text class='top-tit {{cartList.goods.name == "臻采透亮凝水啫喱凝霜：爆水小方" || cartList.goods.name == "臻采透亮洁面啫喱" ? "" : "fontHyb"}}'>{{cartList.goods.name1}}</text>
+        <view class="picker" bindtap='chageStep' data-type="4" data-id='{{cartList.id}}' data-gid="{{cartList.goods.id}}">
+          <text class='top-txt'>{{cartList.goods.specs.description}}</text>
+          <view class='pic-icon'></view>
+        </view>
+      </view>
+      <view class='top-right del' bindtap='chageStep' data-type="1" data-id='{{cartList.id}}' data-txt='{{cartList.goods.name}}'></view>
+    </view>
+    <view class='cart-bottom'>
+      <view class='cart-change'>
+        <view class='cart-change-view'>
+        <view class='cart-change-list' bindtap='chageStep' data-type="3" data-id='{{cartList.id}}'>
+          <text class='cart-minus-icon'>-</text>
+        </view>
+        <view class='cart-change-list cart-num'>
+          <text class='cart-num-icon'>{{cartList.goods.total}}</text>
+        </view>
+        <view class='cart-change-list' bindtap='chageStep' data-type="5" data-id='{{cartList.id}}'>
+          <text class='cart-minus-icon'>+</text>
+        </view>
+        </view>
+      </view>
+      <view class='cart-price'>
+        <text class='cart-price-txt'>¥{{cartList.goods.totalprice}}</text>
+      </view>
+    </view>
+  </view>
+  </view>
+  <!-- <view wx:if="{{cartIndex%2 == 0}}" class='line'></view> -->
+</view>

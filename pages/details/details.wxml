@@ -1,0 +1,130 @@
+<!--pages/details/details.wxml-->
+<block wx:if="{{isAuto}}">
+  <view class='start-page1 {{isphone ? "" : "start-page2"}}' >
+    <!-- <image src='{{step2Img}}' style='width:100%;height:100%;' class='step2Img' mode='widthFix' bindload="loadend"></image> -->
+    <view class='login-info {{isphone ? "" : "login-info1"}}'>
+      <!-- <view class='login-view'>
+        <image class='k-logo' src='../../images/k-logo.png' mode='widthFix'></image>
+        <text class='info-txt'>小程序申请获得以下权限：</text>
+      </view>
+      <text class='info-txt'>获得您的公开信息（昵称、头像等）</text> -->
+      <button class='login-btn' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权 </button>
+    </view>
+  </view>
+</block>
+<block wx:else>
+<view class='container index-content'>
+  <swiper style='height:100%'  interval="{{config.interval}}" duration="{{config.duration}}" vertical="{{true}}" current="{{config.current}}" bindchange="bindchange1">
+  <swiper-item style="background:#fff;position:relative;">
+    <view class='pro-details'>
+      <view class='pro-top-view'>
+      <!-- style="height:{{imgheights[current]}}rpx;position:relative" -->
+        <swiper 
+          class='swiper-c {{isphone ? "swiper-c1" : ""}}'
+          bindchange="bindchange" 
+          autoplay="{{autoplay}}" circular="{{true}}" interval="{{interval}}" duration="{{duration}}" current='{{current}}'
+          >
+          <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+            <swiper-item class="swiper-w">
+              <image src="{{item.url}}" data-id='{{index}}' class="pro-img" mode="widthFix" bindload="imageLoad" />
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class='dot-icon'>
+          <view wx:for="{{imgUrls}}" wx:key="{{index}}" class='dot-default {{current == index ? "dot-active1" : ""}}'></view> 
+        </view>
+      </view>
+      <view class='top'>
+        <text class='tit {{info.product.name == "臻采透亮凝水啫喱凝霜：爆水小方" ? "" : "fontHyb"}}'>{{info.product.name2}}</text>
+        <block wx:if="{{info.stype == '固体精华'}}">
+          <text class='txt {{info.product.name1 == "光采透亮" ? "fen" : info.product.name1 == "盈润水光" ? "lan" : "zong"}}'>{{info.product.name1}}</text>
+        </block>
+        <block wx:elif="{{info.stype == '面膜'}}">
+          <!-- <image class='stype-img' src='../../images/blue.png' mode='widthFix'></image> -->
+          <image class='stype-img' wx:if="{{info.product.name1 == '小蓝钻'}}" src='../../images/blue.png' mode='widthFix'></image>
+          <image class='stype-img' wx:if="{{info.product.name1 == '小黄钻'}}" src='../../images/yellow.png' mode='widthFix'></image>
+          <image class='stype-img' wx:if="{{info.product.name1 == '小银钻'}}" src='../../images/gray.png' mode='widthFix'></image>
+          <image class='stype-img' wx:if="{{info.product.name1 == '小亮钻'}}" src='../../images/gray1.png' mode='widthFix'></image>
+          <image class='stype-img' wx:if="{{info.product.name1 == '小绿钻'}}" src='../../images/green.png' mode='widthFix'></image>
+        </block>
+        <block wx:if="{{info.product.name1 == '极光水'}}">
+          <image class='stype-img' src='../../images/jgs.png' mode='widthFix'></image>
+        </block>
+        <block wx:if="{{info.product.name1 == '极光瓶'}}">
+          <image class='stype-img' src='../../images/jgp.png' mode='widthFix'></image>
+        </block>
+        <block wx:if="{{info.product.name1 == '爆水小方'}}">
+          <image class='stype-img-2' src='../../images/bsxlf.png' mode='widthFix'></image>
+        </block>
+      </view>
+      <view class='spec-content {{isphone ? "spec-content1" : ""}}' wx:for="{{specList}}" wx:for-index="idx" wx:key="{{idx}}"wx:for-item="itemName">
+        <text class='spec-txt'>选择产品{{itemName.name}}</text>
+        <view class='spec-list'>
+          <view class='list' wx:for="{{itemName.properties}}" wx:key="{{index}}">
+            <view class='list-content' >
+            <button class='spec-type type-txt {{specIds[idx] == item.id ? "spec-active active-txt" : ""}}' bindtap='changeSpec' data-id='{{item.id}}' data-name='{{item.name}}' data-idx='{{idx}}' data-index='{{index+1}}'>{{item.name}}</button>
+            <!-- <view class='spec-type {{specIds[idx] == item.id ? "spec-active" : ""}}' bindtap='changeSpec' data-id='{{item.id}}' data-name='{{item.name}}' data-idx='{{idx}}' data-index='{{index+1}}'>
+              <text class='type-txt {{specIds[idx] == item.id ? "active-txt" : ""}}'>{{item.name}}</text>
+            </view> -->
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  <view class='more-detail {{isphone ? "more-detail1" : ""}}'>
+      <view class='start-icon' bindtap='changeStep' data-current='{{0}}'></view>
+      </view>
+  </swiper-item>
+  <swiper-item >
+  <block wx:if="{{imglist.length > 0}}">
+    <scroll-view id="j_page" scroll-y style="height: 100%;" bindscrolltolower="lower"  bindscrolltoupper="upper"  data-current="{{1}}" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+    <view class='view-img-content'>
+    <image class='pro-img' mode='widthFix' wx:for="{{imglist}}" wx:key="{{index}}" src='{{item}}'></image>
+    </view>
+    </scroll-view>
+  </block>
+  <block wx:else>
+    <view id='no-more' wx:if="{{!isMore}}">
+      <text class='empty-txt'>暂无详情～</text>
+    </view>
+  </block>
+  </swiper-item>
+  </swiper>
+  <view class='bottom-view'>
+    <view class='bottom-list cart-list' bindtap='goCart'>
+      <view class='cart-icon-item'>
+      <view class='cart-icon'></view>
+      <view class='cart-num-content' wx:if="{{cartNum > 0}}">
+        <text class='cart-num-i'>{{cartNum}}</text>
+      </view>
+      </view>
+      <text class='cart-txt'>¥{{price}}</text>
+    </view>
+    <block wx:if="{{!hasUserInfo && canIUse}}">
+      <view class='bottom-list center-list' bindtap='addCart' >
+        <text class='center-txt'>加入购物车</text>
+      </view>
+       <!-- bindtap='goApply' -->
+      <view class='bottom-list right-list' bindtap='addCart'>
+        <text class='center-txt'>{{'立即购买'}}</text>
+      </view>
+      <!-- <button class='bottom-list right-list' style='color:#fff;border-radius:0' open-type="getUserInfo" bindgetuserinfo="getUserInfo">加入购物车 </button> -->
+      
+    </block>
+    <block wx:else>
+      <view class='bottom-list center-list' bindtap='addCart' data-type='0'>
+        <text class='center-txt'>加入购物车</text>
+      </view>
+      <view class='bottom-list right-list' bindtap='addCart' data-type='1'>
+        <text class='center-txt'>立即购买</text>
+      </view>
+      <!-- <view wx:if="{{info.product.tryout}}" class='bottom-list center-list' bindtap='goApply'>
+        <text class='center-txt'>{{istype == 'wait' ? '申领中' : istype == 'fail' ? '已开奖' : istype == 'pass' ? '去领奖' : istype == 'accepted' ? '已领奖' : '正装申领'}}</text>
+      </view> -->
+    </block>
+  </view>
+  <view class="good_box" hidden="{{hide_good_box}}"  style="left: {{bus_x}}px; top: {{bus_y}}px;">
+    <image src="{{info.tryout ? info.pictures[3].url : info.product.pictures[1].url}}"></image>
+  </view>
+</view>
+</block>

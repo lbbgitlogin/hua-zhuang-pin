@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "申领结果",
+  "usingComponents": {
+    "select-add": "/component/selectAdd/selectAdd"
+  }
+}
